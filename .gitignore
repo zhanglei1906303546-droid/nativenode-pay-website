@@ -1,0 +1,13 @@
+node_modules/
+*.log
+*.db
+.accio/
+.vscode/
+dist/
+build/
+*.tmp
+photo*.jpg
+photo*.png
+photo*.txt
+base64_photos.json
+test.txt
