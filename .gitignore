@@ -6,6 +6,7 @@ node_modules/
 dist/
 build/
 *.tmp
+.github_token.txt
 photo*.jpg
 photo*.png
 photo*.txt
