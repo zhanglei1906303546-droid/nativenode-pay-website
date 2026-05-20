@@ -17,6 +17,10 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #FFFFFF; /* 纯白背景 */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* IE10+ */
+            user-select: none;         /* Standard */
         }
         .gradient-text {
             background: linear-gradient(135deg, #2563EB 0%, #0052FF 50%, #1E40AF 100%);
@@ -54,7 +58,7 @@
     <nav class="fixed w-full z-50 glass-card border-b border-gray-100 top-0">
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
             <a href="/zh/" class="flex items-center">
-                <img src="../assets/logo.png" alt="Nativenode pay" class="h-10 md:h-14">
+                <span class="text-xl md:text-2xl font-bold text-[#0052FF] tracking-tight">Nativenode pay</span>
             </a>
             <div class="hidden md:flex space-x-10 text-sm font-medium text-gray-600">
                 <a href="#" class="hover:text-[#0052FF] transition-colors">解决方案</a>
@@ -243,7 +247,7 @@
     <footer class="py-20 px-6 border-t border-gray-200">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
             <div class="flex items-center">
-                <img src="../assets/logo.png" alt="Nativenode pay" class="h-10">
+                <span class="text-xl font-bold text-[#0052FF] tracking-tight">Nativenode pay</span>
             </div>
             <p class="text-gray-500 text-sm">© 2026 Nativenode pay Global Infrastructure.</p>
             <div class="flex space-x-6">
