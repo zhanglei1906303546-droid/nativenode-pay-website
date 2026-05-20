@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nativenode pay | 重塑全球原生直连支付底座</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Deep Black/Blue */
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60A5FA 0%, #0052FF 50%, #1D4ED8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 82, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            filter: blur(40px);
+        }
+        .node-grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black, transparent 80%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="text-slate-200">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b border-white/5 top-0">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-[#0052FF] rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-white">Nativenode pay</span>
+            </div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium text-slate-400">
+                <a href="#" class="hover:text-[#0052FF] transition-colors">解决方案 (Solutions)</a>
+                <a href="#" class="hover:text-[#0052FF] transition-colors">开发者 (Developers)</a>
+                <a href="#" class="hover:text-[#0052FF] transition-colors">定价 (Pricing)</a>
+            </div>
+            <div>
+                <button class="bg-[#0052FF] hover:bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-[0_0_20px_rgba(0,82,255,0.4)]">
+                    开始体验 (Get Started)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-20 px-6 overflow-hidden">
+        <div class="node-grid"></div>
+        <div class="hero-glow top-0 -left-40"></div>
+        <div class="hero-glow bottom-0 -right-40"></div>
+        
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8">
+                <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
+                <span class="text-xs font-semibold text-blue-400 tracking-wider uppercase">Next Gen Infrastructure</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-bold mb-8 tracking-tight">
+                <span class="block text-white">Nativenode pay</span>
+                <span class="gradient-text">重塑全球原生直连支付底座</span>
+            </h1>
+            
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12 leading-relaxed">
+                拒绝跳链中间态。基于全球分布式原生节点架构，实现毫秒级 API 直接响应，为跨境业务带来前所未有的支付成功率。
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#" class="w-full sm:w-auto bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-slate-200 transition-all flex items-center justify-center">
+                    立即开通
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="#" class="w-full sm:w-auto glass-card px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all text-white">
+                    联系销售 (Contact Sales)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section (Grid Layout) -->
+    <section class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Limit Tile -->
+                <div class="glass-card p-10 rounded-3xl group hover:border-blue-500/50 transition-all">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 text-blue-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3 class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-2">灵活交易限额</h3>
+                    <div class="text-3xl font-bold text-white mb-4">充值 10-2500 USD / 代付 1-5000 USD</div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        灵活适配高客单价业务场景，突破支付瓶颈，释放业务增长潜力。
+                    </p>
+                </div>
+
+                <!-- Speed Tile -->
+                <div class="glass-card p-10 rounded-3xl group hover:border-blue-500/50 transition-all">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 text-blue-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                    </div>
+                    <h3 class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-2">入账回调延迟</h3>
+                    <div class="text-4xl font-bold text-white mb-4">< 200ms</div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        毫秒级响应，全链路自动化对账，资金周转快人一步，掌握每一秒商机。
+                    </p>
+                </div>
+
+                <!-- Success Rate Tile -->
+                <div class="glass-card p-10 rounded-3xl group hover:border-blue-500/50 transition-all">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 text-blue-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M22 12c0-5.52-4.48-10-10-10"></path><path d="M2 12c0 5.52 4.48 10 10 10"></path><path d="M12 2a10 10 0 0 1 0 20"></path><path d="M12 2a10 10 0 0 0 0 20"></path></svg>
+                    </div>
+                    <h3 class="text-slate-400 text-sm font-bold uppercase tracking-widest mb-2">历史交易成功率</h3>
+                    <div class="text-4xl font-bold text-white mb-4">98%</div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        分布式原生节点架构，多节点冗余备份，无惧流量洪峰，确立行业稳定性新标准。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="py-24 px-6 bg-white/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">核心参数对比 (Parameters)</h2>
+                <p class="text-slate-400">我们将安全性与透明度作为平台的核心基石</p>
+            </div>
+            
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-white/5">
+                            <th class="px-8 py-6 text-slate-300 font-bold border-b border-white/10">性能维度 (Metric)</th>
+                            <th class="px-8 py-6 text-slate-300 font-bold border-b border-white/10">Nativenode pay 指标</th>
+                            <th class="px-8 py-6 text-slate-300 font-bold border-b border-white/10">行业平均</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/10">
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-8 py-6 text-slate-400">支付体验 (Experience)</td>
+                            <td class="px-8 py-6 text-[#0052FF] font-bold">内嵌式无跳链收银台，支付留存提升 30%</td>
+                            <td class="px-8 py-6 text-slate-500">需跳转至第三方支付页，流失率高</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-8 py-6 text-slate-400">链路安全性 (Security)</td>
+                            <td class="px-8 py-6 text-[#0052FF] font-bold">底层加密 API 直连，原生节点风控扫描</td>
+                            <td class="px-8 py-6 text-slate-500">暴露重定向 URL，易被拦截劫持</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-8 py-6 text-slate-400">结算周期 (Settlement)</td>
+                            <td class="px-8 py-6 text-[#0052FF] font-bold">T+0 至 T+3 灵活结算</td>
+                            <td class="px-8 py-6 text-slate-500">D+3 或更久，结算周期长</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="px-8 py-6 text-slate-400">合规审计 (Compliance)</td>
+                            <td class="px-8 py-6 text-[#0052FF] font-bold">全球牌照直连，100% 透明清算链路</td>
+                            <td class="px-8 py-6 text-slate-500">多层代理嵌套，账单信息模糊</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Section -->
+    <section class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl border border-blue-500/30 text-center relative z-10">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-500/20 rounded-full mb-6 text-blue-400">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">“零风险”承诺：1:1 原生退赔保障计划</h2>
+            <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+                针对由于系统链路、节点故障导致的问题交易，Nativenode pay 提供 1:1 全额先行垫付。内置 AI 防欺诈引擎，在确保资金安全的同时，最大限度减少误杀风险。
+            </p>
+            <div class="flex items-center justify-center space-x-4">
+                <span class="px-4 py-2 bg-white/5 rounded-lg border border-white/10 text-sm font-semibold text-slate-300">全额先行承保</span>
+                <span class="px-4 py-2 bg-white/5 rounded-lg border border-white/10 text-sm font-semibold text-slate-300">AI 原生风控</span>
+                <span class="px-4 py-2 bg-white/5 rounded-lg border border-white/10 text-sm font-semibold text-slate-300">7x24 技术专家响应</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="py-12 text-center">
+        <p class="text-slate-500 font-medium tracking-widest uppercase text-sm">原生节点架构 · 全球支付直连 · 极致转化爆发</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+            <div class="flex items-center space-x-2">
+                <div class="w-6 h-6 bg-[#0052FF] rounded flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <span class="text-xl font-bold text-white">Nativenode pay</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2026 Nativenode pay Global Infrastructure.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">Security</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+html>
