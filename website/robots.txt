@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block access to any admin or internal files
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://gzaerlis.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

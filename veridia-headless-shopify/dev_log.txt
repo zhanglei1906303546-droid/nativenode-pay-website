@@ -1,0 +1,161 @@
+
+> veridia-headless-shopify@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.15
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+[Error: EPERM: operation not permitted, open 'C:\Users\Administrator\.accio\accounts\1752278167\agents\DID-F456DA-2B0D4C\project\veridia-headless-shopify\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\Administrator\\.accio\\accounts\\1752278167\\agents\\DID-F456DA-2B0D4C\\project\\veridia-headless-shopify\\.next\\trace'
+}
+ ✓ Ready in 2.4s
+ ○ Compiling / ...
+The user aborted a request.
+
+Retrying 1/3...
+ ✓ Compiled / in 13.7s (1251 modules)
+ ✓ Compiled in 223ms (620 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cf4XAW1j 500 in 16526ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cf4XAW1j 500 in 69ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cf4XAW1j 500 in 86ms
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cf4XAW1j 500 in 88ms
+ ✓ Compiled in 276ms (620 modules)
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <button onClick={function onClick} className=... children=...>
+                  ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+digest: "4095870947"
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cf4XAW1j 500 in 87ms
+ ✓ Compiled in 312ms (1236 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cf4XAW1j 200 in 1540ms
+ ✓ Compiled in 163ms (621 modules)
+ ✓ Compiled in 166ms (621 modules)
+ GET / 200 in 1203ms
+ GET / 200 in 4137ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 720ms (1232 modules)
+ ⨯ components\Navbar.tsx (21:41) @ useCart
+ ⨯ ReferenceError: useCart is not defined
+    at Navbar (./components/Navbar.tsx:62:43)
+digest: "3552773934"
+[0m [90m 19 |[39m   [36mconst[39m [hoveredItem[33m,[39m setHoveredItem] [33m=[39m useState[33m<[39m[33mstring[39m [33m|[39m [36mnull[39m[33m>[39m([36mnull[39m)[33m;[39m[0m
+[0m [90m 20 |[39m   [36mconst[39m [isShopMenuOpen[33m,[39m setIsShopMenuOpen] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 21 |[39m   [36mconst[39m { setIsCartOpen[33m,[39m totalItems } [33m=[39m useCart()[33m;[39m[0m
+[0m [90m    |[39m                                         [31m[1m^[22m[39m[0m
+[0m [90m 22 |[39m[0m
+[0m [90m 23 |[39m   useEffect(() [33m=>[39m {[0m
+[0m [90m 24 |[39m     [36mconst[39m handleScroll [33m=[39m () [33m=>[39m {[0m
+ GET / 500 in 370ms
+ ⨯ components\Navbar.tsx (21:41) @ useCart
+ ⨯ ReferenceError: useCart is not defined
+    at Navbar (./components/Navbar.tsx:62:43)
+digest: "3552773934"
+[0m [90m 19 |[39m   [36mconst[39m [hoveredItem[33m,[39m setHoveredItem] [33m=[39m useState[33m<[39m[33mstring[39m [33m|[39m [36mnull[39m[33m>[39m([36mnull[39m)[33m;[39m[0m
+[0m [90m 20 |[39m   [36mconst[39m [isShopMenuOpen[33m,[39m setIsShopMenuOpen] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 21 |[39m   [36mconst[39m { setIsCartOpen[33m,[39m totalItems } [33m=[39m useCart()[33m;[39m[0m
+[0m [90m    |[39m                                         [31m[1m^[22m[39m[0m
+[0m [90m 22 |[39m[0m
+[0m [90m 23 |[39m   useEffect(() [33m=>[39m {[0m
+[0m [90m 24 |[39m     [36mconst[39m handleScroll [33m=[39m () [33m=>[39m {[0m
+ GET / 500 in 93ms
+ ⨯ components\Navbar.tsx (21:41) @ useCart
+ ⨯ ReferenceError: useCart is not defined
+    at Navbar (./components/Navbar.tsx:62:43)
+digest: "3552773934"
+[0m [90m 19 |[39m   [36mconst[39m [hoveredItem[33m,[39m setHoveredItem] [33m=[39m useState[33m<[39m[33mstring[39m [33m|[39m [36mnull[39m[33m>[39m([36mnull[39m)[33m;[39m[0m
+[0m [90m 20 |[39m   [36mconst[39m [isShopMenuOpen[33m,[39m setIsShopMenuOpen] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 21 |[39m   [36mconst[39m { setIsCartOpen[33m,[39m totalItems } [33m=[39m useCart()[33m;[39m[0m
+[0m [90m    |[39m                                         [31m[1m^[22m[39m[0m
+[0m [90m 22 |[39m[0m
+[0m [90m 23 |[39m   useEffect(() [33m=>[39m {[0m
+[0m [90m 24 |[39m     [36mconst[39m handleScroll [33m=[39m () [33m=>[39m {[0m
+ GET / 500 in 613ms
+ ⨯ components\Navbar.tsx (21:41) @ useCart
+ ⨯ ReferenceError: useCart is not defined
+    at Navbar (./components/Navbar.tsx:62:43)
+digest: "3552773934"
+[0m [90m 19 |[39m   [36mconst[39m [hoveredItem[33m,[39m setHoveredItem] [33m=[39m useState[33m<[39m[33mstring[39m [33m|[39m [36mnull[39m[33m>[39m([36mnull[39m)[33m;[39m[0m
+[0m [90m 20 |[39m   [36mconst[39m [isShopMenuOpen[33m,[39m setIsShopMenuOpen] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 21 |[39m   [36mconst[39m { setIsCartOpen[33m,[39m totalItems } [33m=[39m useCart()[33m;[39m[0m
+[0m [90m    |[39m                                         [31m[1m^[22m[39m[0m
+[0m [90m 22 |[39m[0m
+[0m [90m 23 |[39m   useEffect(() [33m=>[39m {[0m
+[0m [90m 24 |[39m     [36mconst[39m handleScroll [33m=[39m () [33m=>[39m {[0m
+ GET / 500 in 74ms
+ ⨯ components\Navbar.tsx (21:41) @ useCart
+ ⨯ ReferenceError: useCart is not defined
+    at Navbar (./components/Navbar.tsx:62:43)
+digest: "3552773934"
+[0m [90m 19 |[39m   [36mconst[39m [hoveredItem[33m,[39m setHoveredItem] [33m=[39m useState[33m<[39m[33mstring[39m [33m|[39m [36mnull[39m[33m>[39m([36mnull[39m)[33m;[39m[0m
+[0m [90m 20 |[39m   [36mconst[39m [isShopMenuOpen[33m,[39m setIsShopMenuOpen] [33m=[39m useState([36mfalse[39m)[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 21 |[39m   [36mconst[39m { setIsCartOpen[33m,[39m totalItems } [33m=[39m useCart()[33m;[39m[0m
+[0m [90m    |[39m                                         [31m[1m^[22m[39m[0m
+[0m [90m 22 |[39m[0m
+[0m [90m 23 |[39m   useEffect(() [33m=>[39m {[0m
+[0m [90m 24 |[39m     [36mconst[39m handleScroll [33m=[39m () [33m=>[39m {[0m
+ GET / 500 in 65ms
+ ✓ Compiled in 529ms (1238 modules)
+ GET / 200 in 144ms
+ GET / 200 in 775ms

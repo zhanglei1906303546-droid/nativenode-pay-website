@@ -1,0 +1,306 @@
+
+> veridia-headless-shopify@0.1.0 dev
+> next dev -p 3002
+
+  ▲ Next.js 14.2.15
+  - Local:        http://localhost:3002
+
+ ✓ Starting...
+ ✓ Ready in 7.9s
+ ○ Compiling / ...
+The user aborted a request.
+
+Retrying 1/3...
+ ✓ Compiled / in 11.7s (1250 modules)
+ HEAD / 200 in 12185ms
+ ✓ Compiled in 276ms (627 modules)
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 200 in 50ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfuRrK8R 200 in 103ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 200 in 74ms
+ ✓ Compiled in 414ms (627 modules)
+ ✓ Compiled in 198ms (627 modules)
+ ✓ Compiled in 157ms (627 modules)
+ ✓ Compiled in 665ms (1253 modules)
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 200 in 870ms
+ ✓ Compiled in 476ms (1253 modules)
+ ✓ Compiled in 337ms (1236 modules)
+ ✓ Compiled in 439ms (1250 modules)
+ ✓ Compiled in 379ms (1250 modules)
+ ✓ Compiled in 412ms (1250 modules)
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 200 in 1117ms
+ GET / 200 in 68ms
+ ✓ Compiled in 836ms (1250 modules)
+ ✓ Compiled in 173ms (627 modules)
+ ✓ Compiled in 496ms (1250 modules)
+ ✓ Compiled in 211ms (1250 modules)
+ ✓ Compiled in 278ms (1250 modules)
+ GET / 200 in 125ms
+ GET / 200 in 48ms
+ ○ Compiling /collections/[handle] ...
+ ✓ Compiled /collections/[handle] in 723ms (1257 modules)
+ ✓ Compiled in 257ms (628 modules)
+ GET /collections/skin 200 in 2820ms
+ GET /collections/skin 200 in 205ms
+ GET /collections/skin 200 in 194ms
+ GET /collections/skin 200 in 197ms
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ GET /collections/skin 500 in 400ms
+ GET / 200 in 90ms
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ GET /collections/skin 500 in 95ms
+ GET / 200 in 45ms
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ GET /collections/skin 500 in 67ms
+ GET / 200 in 56ms
+ ⨯     at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "129734214"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <... initial={{...}} whileInView=... viewport=... className=... onClick={function onClick} children=...>
+                                                                          ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>)
+digest: "2227781934"
+ GET /collections/skin 500 in 89ms
+ GET / 200 in 65ms
+ ⨯ ./app/products/[handle]/page.tsx
+Error: 
+  [31mx[0m You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+  [31m|[0m Learn more: https://nextjs.org/docs/getting-started/react-essentials
+  [31m|[0m 
+  [31m|[0m 
+   ,-[[36;1;4mC:\Users\Administrator\.accio\accounts\1752278167\agents\DID-F456DA-2B0D4C\project\veridia-headless-shopify\app\products\[handle]\page.tsx[0m:3:1]
+ [2m3[0m | import AnnouncementBar from '@/components/AnnouncementBar';
+ [2m4[0m | import { Check, Info, Minus, Plus, Star } from 'lucide-react';
+ [2m5[0m | import { motion } from 'framer-motion';
+ [2m6[0m | import { useState } from 'react';
+   : [31;1m         ^^^^^^^^[0m
+ [2m7[0m | 
+ [2m8[0m | export default function ProductPage({ params }: { params: { handle: string } }) {
+ [2m9[0m |   const product = PRODUCTS.find(p => p.handle === params.handle) || PRODUCTS[0];
+   `----
+
+Import trace for requested module:
+./app/products/[handle]/page.tsx
+ ○ Compiling /_not-found ...
+ ⨯ ./app/products/[handle]/page.tsx
+Error: 
+  [31mx[0m You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+  [31m|[0m Learn more: https://nextjs.org/docs/getting-started/react-essentials
+  [31m|[0m 
+  [31m|[0m 
+   ,-[[36;1;4mC:\Users\Administrator\.accio\accounts\1752278167\agents\DID-F456DA-2B0D4C\project\veridia-headless-shopify\app\products\[handle]\page.tsx[0m:3:1]
+ [2m3[0m | import AnnouncementBar from '@/components/AnnouncementBar';
+ [2m4[0m | import { Check, Info, Minus, Plus, Star } from 'lucide-react';
+ [2m5[0m | import { motion } from 'framer-motion';
+ [2m6[0m | import { useState } from 'react';
+   : [31;1m         ^^^^^^^^[0m
+ [2m7[0m | 
+ [2m8[0m | export default function ProductPage({ params }: { params: { handle: string } }) {
+ [2m9[0m |   const product = PRODUCTS.find(p => p.handle === params.handle) || PRODUCTS[0];
+   `----
+
+Import trace for requested module:
+./app/products/[handle]/page.tsx
+ ⨯ ./app/products/[handle]/page.tsx
+Error: 
+  [31mx[0m You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+  [31m|[0m Learn more: https://nextjs.org/docs/getting-started/react-essentials
+  [31m|[0m 
+  [31m|[0m 
+   ,-[[36;1;4mC:\Users\Administrator\.accio\accounts\1752278167\agents\DID-F456DA-2B0D4C\project\veridia-headless-shopify\app\products\[handle]\page.tsx[0m:3:1]
+ [2m3[0m | import AnnouncementBar from '@/components/AnnouncementBar';
+ [2m4[0m | import { Check, Info, Minus, Plus, Star } from 'lucide-react';
+ [2m5[0m | import { motion } from 'framer-motion';
+ [2m6[0m | import { useState } from 'react';
+   : [31;1m         ^^^^^^^^[0m
+ [2m7[0m | 
+ [2m8[0m | export default function ProductPage({ params }: { params: { handle: string } }) {
+ [2m9[0m |   const product = PRODUCTS.find(p => p.handle === params.handle) || PRODUCTS[0];
+   `----
+
+Import trace for requested module:
+./app/products/[handle]/page.tsx
+ ⨯ ./app/products/[handle]/page.tsx
+Error: 
+  [31mx[0m You're importing a component that needs useState. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+  [31m|[0m Learn more: https://nextjs.org/docs/getting-started/react-essentials
+  [31m|[0m 
+  [31m|[0m 
+   ,-[[36;1;4mC:\Users\Administrator\.accio\accounts\1752278167\agents\DID-F456DA-2B0D4C\project\veridia-headless-shopify\app\products\[handle]\page.tsx[0m:3:1]
+ [2m3[0m | import AnnouncementBar from '@/components/AnnouncementBar';
+ [2m4[0m | import { Check, Info, Minus, Plus, Star } from 'lucide-react';
+ [2m5[0m | import { motion } from 'framer-motion';
+ [2m6[0m | import { useState } from 'react';
+   : [31;1m         ^^^^^^^^[0m
+ [2m7[0m | 
+ [2m8[0m | export default function ProductPage({ params }: { params: { handle: string } }) {
+ [2m9[0m |   const product = PRODUCTS.find(p => p.handle === params.handle) || PRODUCTS[0];
+   `----
+
+Import trace for requested module:
+./app/products/[handle]/page.tsx
+ GET / 500 in 983ms
+ GET / 500 in 10ms
+ GET / 500 in 8ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 7ms
+ ✓ Compiled /_error in 948ms (1485 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 200 in 268ms
+ ⨯ ./lib/mock-data.ts
+Error: 
+  [31mx[0m Expression expected
+     ,-[[36;1;4mC:\Users\Administrator\.accio\accounts\1752278167\agents\DID-F456DA-2B0D4C\project\veridia-headless-shopify\lib\mock-data.ts[0m:105:1]
+ [2m105[0m |     image: 'https://cdn.sanity.io/images/wc4lcg7n/develop/466850cf95ccc7545e39d9d8b1a045aa78afd99c-400x400.png?auto=format&w=400&h=400',
+ [2m106[0m |     tags: ['Probiotics', 'Gut Health']
+ [2m107[0m |   }
+ [2m108[0m | ];}
+     : [31;1m  ^[0m
+ [2m109[0m | ];
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/mock-data.ts
+./app/collections/[handle]/page.tsx
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 56ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 10ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 14ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 10ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 8ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 8ms
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 500 in 8ms
+ ✓ Compiled in 527ms (1491 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /?spm=4e67c6a7.7d4f6a.0.0.70c676cfekw1dr 200 in 267ms
+ ✓ Compiled /_not-found in 211ms (1480 modules)
+ GET /collections/skin 200 in 74ms
+ GET / 200 in 46ms
+ ✓ Compiled /products/[handle] in 185ms (676 modules)
+ GET /products/daily-cleanse 200 in 569ms
