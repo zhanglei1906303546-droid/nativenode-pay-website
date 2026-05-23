@@ -63,28 +63,15 @@
                 <span class="text-xl md:text-2xl font-bold text-[#0052FF] tracking-tight">Nativenode pay</span>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-                <div class="relative dropdown group">
-                    <button class="flex items-center hover:text-[#0052FF] py-8 transition-colors">
-                        Solutions
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="absolute top-20 left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl hidden dropdown-menu py-2">
-                        <a href="/en/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">eCommerce</a>
-                        <a href="/en/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Gaming</a>
-                        <a href="/en/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Entertainment</a>
-                        <a href="/en/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Ads & Media</a>
-                    </div>
-                </div>
+                <a href="/en/solutions/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Solutions</a>
                 <div class="relative dropdown group">
                     <button class="flex items-center hover:text-[#0052FF] py-8 transition-colors">
                         Regions
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div class="absolute top-20 left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl hidden dropdown-menu py-2">
+                        <a href="/en/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">USA</a>
                         <a href="/en/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Middle East</a>
-                        <a href="/en/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Southeast Asia</a>
-                        <a href="/en/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Latin America</a>
-                        <a href="/en/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Europe & US</a>
                     </div>
                 </div>
                 <a href="/en/cases/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Cases</a>
@@ -305,9 +292,9 @@
                     <a href="/en/cases/" class="text-[#0052FF] font-bold flex items-center">Details <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/></svg></a>
                 </div>
                 <div class="glass-card p-10 rounded-3xl">
-                    <div class="text-purple-600 font-bold mb-4">Gaming Case</div>
-                    <h4 class="text-2xl font-bold mb-4">SLG Game in SE Asia achieves instant settlement</h4>
-                    <p class="text-gray-600 mb-6">"Nativenode pay's low-latency API makes in-game top-ups seamless. T+0 settlement ensures our user acquisition spend remains uninterrupted."</p>
+                    <div class="text-purple-600 font-bold mb-4"          </div>
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-                    <p class="text-gray-600 mb-6">"Nativenode pay's low-latency API makes in-game top-ups seamless. T+0 settlement ensures our user acquisition spend remains uninterrupted."</p>
                     <a href="/en/cases/" class="text-[#0052FF] font-bold flex items-center">Details <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"/></svg></a>
                 </div>
             </div>
@@ -325,6 +312,21 @@
                         <div>
                             <div class="font-bold text-sm">Li Wei</div>
                             <div class="text-xs text-gray-500">CTO, CloudTrade Global</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm italic">
+                    <p class="text-gray-700 mb-6">"Capital security is why we chose Nativenode pay. Their native encryption gives us peace of mind."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3 text-green-600 font-bold">M</div>
+                        <div>
+                            <div class="font-bold text-sm">Michael Chang</div>
+                            <div class="text-xs text-gray-500">Founder, GameX International</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm italic">
+                    <p class="text-gray-700 mb-6">"High limits, high su                        <div class="text-xs text-gray-500">CTO, CloudTrade Global</div>
                         </div>
                     </div>
                 </div>
@@ -519,6 +521,12 @@
         menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
         closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') mobileMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
+  mobileMenu.addEventListener('click', (e) => {
             if (e.target.tagName === 'A') mobileMenu.classList.add('hidden');
         });
     </script>
