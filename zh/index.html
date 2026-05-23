@@ -63,18 +63,7 @@
                 <span class="text-xl md:text-2xl font-bold text-[#0052FF] tracking-tight">Nativenode pay</span>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-                <div class="relative dropdown group">
-                    <button class="flex items-center hover:text-[#0052FF] py-8 transition-colors">
-                        解决方案
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="absolute top-20 left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl hidden dropdown-menu py-2">
-                        <a href="/zh/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">独立站支付</a>
-                        <a href="/zh/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">游戏出海</a>
-                        <a href="/zh/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">社交泛娱乐</a>
-                        <a href="/zh/solutions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">广告投放</a>
-                    </div>
-                </div>
+                <a href="/zh/solutions/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">解决方案</a>
                 <div class="relative dropdown group">
                     <button class="flex items-center hover:text-[#0052FF] py-8 transition-colors">
                         覆盖区域
@@ -82,9 +71,7 @@
                     </button>
                     <div class="absolute top-20 left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl hidden dropdown-menu py-2">
                         <a href="/zh/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">中东地区</a>
-                        <a href="/zh/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">东南亚</a>
-                        <a href="/zh/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">拉美</a>
-                        <a href="/zh/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">欧美</a>
+                        <a href="/zh/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">美国</a>
                     </div>
                 </div>
                 <a href="/zh/cases/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">客户案例</a>
@@ -512,16 +499,6 @@
     <script>
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-        closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') mobileMenu.classList.add('hidden');
-        });
-    </script>
-</body>
-</html>
-loseBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
         closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
