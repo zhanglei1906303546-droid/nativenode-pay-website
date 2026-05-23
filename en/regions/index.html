@@ -13,13 +13,13 @@
 </head>
 <body class="text-gray-800">
     <nav class="fixed w-full z-50 glass-card border-b border-gray-100 top-0">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
             <a href="/en/" class="flex items-center">
                 <span class="text-xl md:text-2xl font-bold text-[#0052FF] tracking-tight">Nativenode pay</span>
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-                <a href="/en/solutions/" class="hover:text-[#0052FF]">Solutions</a>
                 <a href="/en/regions/" class="hover:text-[#0052FF]">Regions</a>
+                <a href="/en/solutions/" class="hover:text-[#0052FF]">Solutions</a>
                 <a href="/en/cases/" class="hover:text-[#0052FF]">Cases</a>
                 <a href="/en/resources/" class="hover:text-[#0052FF]">Resources</a>
             </div>
@@ -27,10 +27,53 @@
         </div>
     </nav>
     <main class="pt-40 pb-20 px-6 max-w-7xl mx-auto min-h-screen">
-        <h1 class="text-4xl md:text-6xl font-bold mb-8">Under Construction</h1>
-        <p class="text-xl text-gray-600">This page is being refined by our product team. Stay tuned.</p>
-        <div class="mt-12">
-            <a href="/en/" class="text-[#0052FF] font-bold flex items-center">← Back to Home</a>
+        <div class="text-center mb-20">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Global Regions</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Delivering 100% native payment experiences in high-growth priority markets.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Middle East -->
+            <div class="glass-card p-10 rounded-[32px] hover:shadow-xl transition-all">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-[#0052FF] font-bold text-xl">ME</div>
+                    <div class="flex space-x-2">
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold">mada</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold">KNET</span>
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold mb-6">Middle East</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Deep coverage in Saudi Arabia (KSA) and Kuwait. Supports **mada** local debit cards and **KNET** instant settlement. Success rates increased by 40% compared to international cards.
+                </p>
+                <div class="p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                    <h3 class="font-bold mb-2 text-blue-800">Key Advantages</h3>
+                    <p class="text-sm text-blue-600">Seamless integration with STC Pay, Apple Pay, and mada for a perfect local checkout experience.</p>
+                </div>
+            </div>
+
+            <!-- USA -->
+            <div class="glass-card p-10 rounded-[32px] hover:shadow-xl transition-all">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 font-bold text-xl">USA</div>
+                    <div class="flex space-x-2">
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold">CashApp</span>
+                        <span class="px-3 py-1 bg-gray-100 rounded-full text-xs font-bold">Direct</span>
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold mb-6">United States</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Supports **CashApp** and direct connection to major North American local card schemes. Licensed local acquiring ensures compliant and high-limit transactions.
+                </p>
+                <div class="p-6 bg-red-50 rounded-2xl border border-red-100">
+                    <h3 class="font-bold mb-2 text-red-800">Key Advantages</h3>
+                    <p class="text-sm text-red-600">Stable local card processing with controlled chargeback risks and flexible settlement cycles.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 text-center">
+            <a href="https://t.me/SZ19972021" class="inline-block bg-[#0052FF] text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-lg transition-all">Get Region Fee Rates</a>
         </div>
     </main>
     <footer class="py-12 border-t border-gray-100 text-center text-gray-500 text-sm">
