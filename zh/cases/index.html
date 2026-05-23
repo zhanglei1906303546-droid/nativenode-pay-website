@@ -9,6 +9,7 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; -webkit-user-select: none; user-select: none; }
         .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.05); }
+        .dropdown:hover .dropdown-menu { display: block; }
     </style>
 </head>
 <body class="text-gray-800">
@@ -18,10 +19,21 @@
                 <span class="text-xl md:text-2xl font-bold text-[#0052FF] tracking-tight">Nativenode pay</span>
             </a>
             <div class="hidden md:flex space-x-[36px] text-lg font-medium text-gray-600">
-                <a href="/zh/regions/" class="hover:text-[#0052FF]">覆盖区域</a>
-                <a href="/zh/solutions/" class="hover:text-[#0052FF]">解决方案</a>
-                <a href="/zh/cases/" class="hover:text-[#0052FF]">客户案例</a>
-                <a href="/zh/resources/" class="hover:text-[#0052FF]">资源中心</a>
+                <div class="relative group dropdown">
+                    <a href="/zh/regions/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">
+                        覆盖区域
+                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <div class="dropdown-menu absolute left-0 hidden group-hover:block pt-0 z-50">
+                        <div class="glass-card rounded-xl py-2 w-40 shadow-xl border border-gray-100 mt-[-10px]">
+                            <a href="/zh/regions/#usa" class="block px-4 py-2 text-base text-gray-600 hover:text-[#0052FF] hover:bg-blue-50 transition-colors">美国</a>
+                            <a href="/zh/regions/#middle-east" class="block px-4 py-2 text-base text-gray-600 hover:text-[#0052FF] hover:bg-blue-50 transition-colors">中东</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/zh/solutions/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">解决方案</a>
+                <a href="/zh/cases/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">客户案例</a>
+                <a href="/zh/resources/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">资源中心</a>
             </div>
             <a href="https://t.me/SZ19972021" class="bg-[#0052FF] text-white px-6 py-2 rounded-full text-sm font-semibold transition-all">立即开始</a>
         </div>
