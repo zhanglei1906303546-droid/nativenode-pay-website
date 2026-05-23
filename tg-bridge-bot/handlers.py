@@ -6,6 +6,11 @@ from database import get_target_chat, is_user_ignored
 
 logger = logging.getLogger(__name__)
 
+async def health_check_job(context: ContextTypes.DEFAULT_TYPE):
+    """Job to log health status periodically."""
+    logger.info("--- HEARTBEAT OK ---")
+    logger.info("Health Check: Bot is alive and job queue is running.")
+
 async def relay_message_job(context: ContextTypes.DEFAULT_TYPE):
     """Job to relay a message after a delay, checking if user is ignored."""
     job = context.job
@@ -35,6 +40,7 @@ async def relay_message_job(context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handles incoming messages and routes them between groups with a 10s delay."""
+    logger.info("--- UPDATE RECEIVED ---")
     if not update.effective_chat:
         return
 
