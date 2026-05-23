@@ -64,28 +64,9 @@
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
                 <a href="/en/solutions/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Solutions</a>
-                <div class="relative dropdown group">
-                    <button class="flex items-center hover:text-[#0052FF] py-8 transition-colors">
-                        Regions
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="absolute top-20 left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl hidden dropdown-menu py-2">
-                        <a href="/en/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">USA</a>
-                        <a href="/en/regions/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Middle East</a>
-                    </div>
-                </div>
+                <a href="/en/regions/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Regions</a>
                 <a href="/en/cases/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Cases</a>
-                <div class="relative dropdown group">
-                    <button class="flex items-center hover:text-[#0052FF] py-8 transition-colors">
-                        Resources
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="absolute top-20 left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-xl hidden dropdown-menu py-2">
-                        <a href="/en/resources/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Blog</a>
-                        <a href="/en/resources/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Docs</a>
-                        <a href="/en/resources/" class="block px-4 py-2 hover:bg-gray-50 hover:text-[#0052FF]">Reports</a>
-                    </div>
-                </div>
+                <a href="/en/resources/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Resources</a>
             </div>
             <div class="flex items-center space-x-4 md:space-x-6">
                 <div class="hidden sm:flex items-center space-x-3 text-sm font-semibold">
@@ -497,6 +478,33 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white backdrop-blur-xl flex flex-col items-center justify-center space-y-8 text-2xl font-bold hidden md:hidden">
+        <button class="absolute top-6 right-6 text-gray-500 hover:text-gray-900" id="close-menu">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        </button>
+        <a href="/en/solutions/" class="text-gray-900 hover:text-[#0052FF]">Solutions</a>
+        <a href="/en/regions/" class="text-gray-900 hover:text-[#0052FF]">Regions</a>
+        <a href="/en/cases/" class="text-gray-900 hover:text-[#0052FF]">Cases</a>
+        <a href="/en/resources/" class="text-gray-900 hover:text-[#0052FF]">Resources</a>
+        <div class="flex items-center space-x-6 pt-8 text-lg">
+            <a href="/en/" class="text-gray-900 border-b-2 border-[#0052FF]">EN</a>
+            <span class="text-gray-300">|</span>
+            <a href="/zh/" class="text-gray-600 hover:text-gray-900 transition-colors">中文</a>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') mobileMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
+2xl font-bold hidden md:hidden">
         <button class="absolute top-6 right-6 text-gray-500 hover:text-gray-900" id="close-menu">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         </button>
