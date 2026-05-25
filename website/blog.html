@@ -18,9 +18,9 @@
 
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── Blog List Page ── */
+    /* ── Blog Directory Page (Compact List View) ── */
     .blog-hero {
-      padding: 160px 0 80px;
+      padding: 120px 0 60px;
       background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
       color: var(--white);
       text-align: center;
@@ -28,361 +28,333 @@
     .blog-hero h1 {
       font-family: var(--font-serif);
       font-size: clamp(2.2rem, 5vw, 3.5rem);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .blog-hero p {
       color: rgba(255,255,255,0.7);
-      font-size: 1.05rem;
+      font-size: 1rem;
       max-width: 560px;
       margin: 0 auto;
     }
 
-    /* ── Article Card Grid ── */
-    .blog-list-section {
-      padding: 80px 0 100px;
-      background: var(--off-white, #fafafa);
+    .blog-directory-section {
+      padding: 60px 0 100px;
+      background: #fff;
     }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 32px;
-      max-width: 1100px;
+    .blog-container {
+      max-width: 960px;
       margin: 0 auto;
       padding: 0 20px;
     }
-    .article-card {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      box-shadow: 0 4px 24px rgba(28,28,46,0.07);
-      overflow: hidden;
+
+    /* ── Directory Layout ── */
+    .directory-list {
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s, box-shadow 0.25s;
+      gap: 0;
+    }
+    .article-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      padding: 35px 0;
+      border-bottom: 1px solid #eee;
       text-decoration: none;
       color: inherit;
+      transition: all 0.2s ease;
     }
-    .article-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(28,28,46,0.13);
+    .article-entry:hover {
+      background-color: #fbfbfb;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: -15px;
+      margin-right: -15px;
+      border-radius: 8px;
     }
-    .card-image {
-      height: 200px;
-      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+    .entry-date {
+      width: 140px;
+      flex-shrink: 0;
+      color: #888;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding-top: 4px;
+    }
+    .entry-main {
+      flex: 1;
+    }
+    .entry-category {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .entry-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--dark);
+      transition: color 0.2s;
+    }
+    .article-entry:hover .entry-title {
+      color: var(--primary);
+    }
+    .entry-excerpt {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    .article-card:hover .card-image img {
-      transform: scale(1.08);
-    }
-    .card-image .card-icon {
-      font-size: 3.5rem;
-      color: rgba(255,255,255,0.15);
-      position: absolute;
-      z-index: 1;
-    }
-    .card-image .card-category {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-    .card-body {
-      padding: 28px 28px 32px;
-      flex: 1;
+    .entry-footer {
       display: flex;
-      flex-direction: column;
-    }
-    .card-meta {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      margin-bottom: 14px;
-    }
-    .card-meta span { margin-right: 14px; }
-    .card-title {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--dark);
-      line-height: 1.45;
-      margin-bottom: 14px;
-      font-weight: 700;
-    }
-    .card-excerpt {
-      font-size: 0.94rem;
-      color: var(--text);
-      line-height: 1.7;
-      flex: 1;
-      margin-bottom: 24px;
-    }
-    .card-read-more {
-      display: inline-flex;
       align-items: center;
-      gap: 6px;
-      color: var(--primary);
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: gap 0.2s;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: #999;
     }
-    .article-card:hover .card-read-more { gap: 10px; }
+    .entry-footer i { margin-right: 6px; }
 
-    /* ── Nav override ── */
-    .site-header {
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 2px 20px rgba(28,28,46,0.1);
+    @media (max-width: 768px) {
+      .article-entry {
+        flex-direction: column;
+        gap: 10px;
+        padding: 25px 0;
+      }
+      .entry-date {
+        width: auto;
+        padding-top: 0;
+        margin-bottom: 5px;
+      }
+      .entry-title {
+        font-size: 1.25rem;
+      }
     }
-    .logo-main { color: var(--dark); }
-    .logo-sub { color: var(--primary); }
-    .nav-links a { color: var(--text); }
-    .nav-links a:hover { color: var(--primary); background: var(--primary-bg); }
-    .hamburger span { background: var(--dark); }
   </style>
 </head>
 <body>
 
-<!-- ========== NAVIGATION ========== -->
-<header class="site-header" id="site-header">
-  <nav class="navbar container" aria-label="Main Navigation">
-    <a href="index.html#home" class="logo" aria-label="Aerlis Leather Home">
-      <span class="logo-icon"><i class="fa-solid fa-briefcase"></i></span>
-      <div class="logo-text">
-        <span class="logo-main">AERLIS</span>
-        <span class="logo-sub">LEATHER GOODS</span>
-      </div>
-    </a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#products">Products</a></li>
-      <li><a href="index.html#factory">Factory</a></li>
-      <li><a href="factory-videos.html">Videos</a></li>
-      <li><a href="blog.html" class="active">Insights</a></li>
-      <li><a href="index.html#contact" class="nav-cta">Inquiry</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</header>
-
-<main>
-  <!-- ========== HERO ========== -->
-  <section class="blog-hero">
-    <div class="container">
-      <h1>Industry Insights</h1>
-      <p>Expert advice on leather manufacturing, OEM sourcing, and global supply chain strategy — from Guangzhou's leading bag factory.</p>
-    </div>
-  </section>
-
-  <!-- ========== ARTICLE LIST ========== -->
-  <section class="blog-list-section">
-    <div class="blog-grid">
-
-      <!-- Article 8 — Latest -->
-      <a href="blog-8.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/A05d7dce50f0b4905b0737d29be30cbaf9.png" alt="Leather Bag Manufacturer Guide 2026">
-          <span class="card-category">Expert Advice</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> May 22, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 7 min read</span>
-          </div>
-          <div class="card-title">2026 Guide to Choosing a Reliable Leather Bag Manufacturer: Innovation, Compliance, and Quality</div>
-          <p class="card-excerpt">Master the art of selecting a leather bag manufacturing partner in 2026. Insights on R&D speed, material compliance (Vegan & Genuine), and QC standards.</p>
-          <span class="card-read-more">Read Full Insight <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <!-- Article 7 -->
-      <a href="blog-7.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/Aed41fa6ce41f468481805993741620d9i.png" alt="Verify Bag Factory R&D Capability">
-          <span class="card-category">Expert Advice</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> May 15, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-          </div>
-          <div class="card-title">Beyond the Sample Room: Verifying a Bag Factory's R&D Strength</div>
-          <p class="card-excerpt">Why looking at finished samples isn't enough. Discover the 4 key metrics to measure a leather goods manufacturer's true design and development power.</p>
-          <span class="card-read-more">Read Full Insight <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <!-- Article 6 -->
-      <a href="blog-6.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/Ab4f0527535b044b292f0fc667fc8570az.png" alt="Summer 2026 Leather Bag Trends">
-          <span class="card-category">Trends & Innovation</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> May 9, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 8 min read</span>
-          </div>
-          <div class="card-title">Summer 2026 Leather Bag Trends: Materials, Colors, and Manufacturing Insights</div>
-          <p class="card-excerpt">A manufacturer's perspective on the upcoming summer trends. From pastel Nappa to hybrid raffia fusions and bio-based sustainable leathers.</p>
-          <span class="card-read-more">Read Full Insight <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <!-- Article 5 -->
-      <a href="blog-5.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/A7d81919e54a14362a824f01a7deab15dg.png" alt="Global Leather Bag Sourcing Guide">
-          <span class="card-category">Strategic Sourcing Masterclass</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> May 8, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 12 min read</span>
-          </div>
-          <div class="card-title">The Definitive Guide to Global Leather Bag Sourcing: From Design Concept to Production</div>
-          <p class="card-excerpt">The 2026 masterclass in leather bag sourcing. Learn about material tech, Design-for-Manufacturing (DFM), factory audits, and global compliance.</p>
-          <span class="card-read-more">Read Masterclass <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <!-- Article 4 -->
-      <a href="blog-4.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/A2e751b9cfd6a422f8ddf0f338e6b0030K.png" alt="Leather Bag Design & Prototyping">
-          <span class="card-category">Product Development</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> May 3, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
-          </div>
-          <div class="card-title">From Sketch to Prototype: How Our In-House Design Team Fast-Tracks Your Brand</div>
-          <p class="card-excerpt">Turn your bag design ideas into physical prototypes in just 7 days. Learn how Aerlis Leather's in-house design team optimizes patterns and fast-tracks your brand development.</p>
-          <span class="card-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <!-- Article 3 -->
-      <a href="blog-3.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/A663719e0b5f24053b9adb369bcdc16799.png" alt="Remote Factory Audit Guide">
-          <span class="card-category">Sourcing Strategy</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> April 24, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-          </div>
-          <div class="card-title">How to Remotely Audit a Chinese Bag Factory: A Practical Guide for International Buyers</div>
-          <p class="card-excerpt">Can't visit China in person? Learn how to verify quality and production using live video tours, real-time QC logs, and third-party verification.</p>
-          <span class="card-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <!-- Article 2 -->
-      <a href="blog-2.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/A67f6a75395ef47f5a216b3fd8913eb9dx.png" alt="Evaluate Bag OEM Factory">
-          <span class="card-category">Factory Evaluation</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> April 17, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
-          </div>
-          <div class="card-title">3 Critical Factors to Evaluate a Bag OEM Factory in China Before You Sign</div>
-          <p class="card-excerpt">Quality control systems, certifications, and production transparency — the 3 pillars every buyer must verify before partnering with a Chinese bag manufacturer.</p>
-          <span class="card-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-      <!-- Article 1 -->
-      <a href="blog-1.html" class="article-card">
-        <div class="card-image">
-          <img src="https://sc02.alicdn.com/kf/A5bd41c22a9794f629256537337a219ecF.png" alt="Choosing Premium Leather Guide">
-          <span class="card-category">Material Sourcing</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span><i class="fa-regular fa-calendar"></i> April 10, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 6 min read</span>
-          </div>
-          <div class="card-title">The Ultimate Guide to Choosing Premium Leather for Custom Handbags</div>
-          <p class="card-excerpt">Full-grain vs. top-grain leather, global compliance standards, and how to balance material cost with brand quality — a complete guide for bag buyers worldwide.</p>
-          <span class="card-read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-
-    </div>
-  </section>
-</main>
-
-<!-- ========== FOOTER ========== -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <a href="index.html#home" class="logo logo-light">
+  <!-- ========== NAVIGATION ========== -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar container" aria-label="Main Navigation">
+      <a href="index.html" class="logo" aria-label="Aerlis Leather Home">
         <span class="logo-icon"><i class="fa-solid fa-briefcase"></i></span>
         <div class="logo-text">
           <span class="logo-main">AERLIS</span>
           <span class="logo-sub">LEATHER GOODS</span>
         </div>
       </a>
-      <p>Guangzhou's premier leather goods manufacturer — crafting quality since 2010.</p>
-      <p class="footer-cn">广州市艾尔丽思皮具有限公司</p>
-    </div>
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html#about">About</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
         <li><a href="index.html#products">Products</a></li>
         <li><a href="index.html#factory">Factory</a></li>
         <li><a href="factory-videos.html">Videos</a></li>
-        <li><a href="blog.html">Insights</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="blog.html" class="active">Insights</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
-    </div>
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p><i class="fa-solid fa-envelope"></i> zinna@gzaerlis.com</p>
-      <p><i class="fa-brands fa-whatsapp"></i> +86 185 2035 0629</p>
-      <p><i class="fa-solid fa-location-dot"></i> No.8, Nanhe 1st Street, Huadu District, Guangzhou, Guangdong, China</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>&copy; 2026 Guangzhou Aerlis Leather Goods Co., Ltd. All Rights Reserved.</p>
-    </div>
-  </div>
-</footer>
+    </nav>
+  </header>
 
-<!-- ========== 悬浮联系按钮 ========== -->
-<div class="float-contact">
-  <a href="https://wa.me/8618520350629" target="_blank" rel="noopener" class="float-btn float-whatsapp" aria-label="Contact via WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span class="float-tooltip">WhatsApp Us</span>
-  </a>
-  <a href="https://mail.google.com/mail/?view=cm&to=zinna@gzaerlis.com&su=Inquiry%20from%20Website&body=Hello%2C%20I%20am%20interested%20in%20your%20leather%20goods." target="_blank" rel="noopener" class="float-btn float-email" aria-label="Send us an Email">
-    <i class="fa-solid fa-envelope"></i>
-    <span class="float-tooltip">Email Us</span>
-  </a>
-</div>
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <h1>Industry Insights</h1>
+        <p>Stay ahead with expert knowledge on handbag manufacturing, material sourcing, and supply chain transparency.</p>
+      </div>
+    </section>
+
+    <section class="blog-directory-section">
+      <div class="blog-container">
+        <div class="directory-list">
+
+          <!-- Article 9 -->
+          <a href="blog-9.html" class="article-entry">
+            <div class="entry-date">May 25, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Procurement Strategy</span>
+              <h2 class="entry-title">2026 Transparent Supply Chain Guide: Reducing Handbag Procurement Risk in China</h2>
+              <p class="entry-excerpt">Learn how to eliminate risks in handbag procurement through supply chain transparency, digital traceability, and real-time QC monitoring.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                <span>Read Full Guide <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 8 -->
+          <a href="blog-8.html" class="article-entry">
+            <div class="entry-date">May 22, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Expert Advice</span>
+              <h2 class="entry-title">2026 Guide to Choosing a Reliable Leather Bag Manufacturer: Innovation, Compliance, and Quality</h2>
+              <p class="entry-excerpt">Master the art of selecting a leather bag manufacturing partner in 2026. Insights on R&D speed, material compliance, and QC standards.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+                <span>Read Full Insight <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 7 -->
+          <a href="blog-7.html" class="article-entry">
+            <div class="entry-date">May 15, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Expert Advice</span>
+              <h2 class="entry-title">Beyond the Sample Room: Verifying a Bag Factory's R&D Strength</h2>
+              <p class="entry-excerpt">Why looking at finished samples isn't enough. Discover the 4 key metrics to measure a leather goods manufacturer's true design and development power.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                <span>Read Full Insight <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 6 -->
+          <a href="blog-6.html" class="article-entry">
+            <div class="entry-date">May 12, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Trends & Innovation</span>
+              <h2 class="entry-title">Summer 2026 Leather Bag Trends: Lightweight Luxury and Bold Hardware</h2>
+              <p class="entry-excerpt">From oversized totes to mini structured purses, explore the key trends dominating the high-end leather goods market in 2026.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+                <span>View Trends <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 5 -->
+          <a href="blog-5.html" class="article-entry">
+            <div class="entry-date">May 5, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Procurement Guide</span>
+              <h2 class="entry-title">A Step-by-Step Guide to Sourcing Bags in Guangzhou for Global Brands</h2>
+              <p class="entry-excerpt">Mastering the Huadu Leather market, navigating factory audits, and managing shipping logistics to the US and Europe from Guangzhou.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 10 min read</span>
+                <span>Read Guide <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 4 -->
+          <a href="blog-4.html" class="article-entry">
+            <div class="entry-date">April 28, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Technical Specs</span>
+              <h2 class="entry-title">Vegan Leather vs. Genuine Leather: Which is Right for Your Next Collection?</h2>
+              <p class="entry-excerpt">Comparing durability, cost, sustainability markers, and market perception for the 2026 eco-conscious luxury market.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 8 min read</span>
+                <span>View Comparison <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 3 -->
+          <a href="blog-3.html" class="article-entry">
+            <div class="entry-date">April 21, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Quality Control</span>
+              <h2 class="entry-title">Understanding AQL 2.5: Why Your Handbag Factory's QC Standard Matters</h2>
+              <p class="entry-excerpt">How strict quality control protocols during mass production prevent costly retail returns and protect your brand's reputation.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+                <span>Read Article <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 2 -->
+          <a href="blog-2.html" class="article-entry">
+            <div class="entry-date">April 14, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Design & OEM</span>
+              <h2 class="entry-title">From Sketch to Shelf: The OEM Bag Production Timeline Explained</h2>
+              <p class="entry-excerpt">Navigating the 6 key stages of custom bag manufacturing: design, sampling, material sourcing, mass production, QC, and logistics.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 9 min read</span>
+                <span>Read Article <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Article 1 -->
+          <a href="blog-1.html" class="article-entry">
+            <div class="entry-date">April 10, 2026</div>
+            <div class="entry-main">
+              <span class="entry-category">Material Sourcing</span>
+              <h2 class="entry-title">The Ultimate Guide to Choosing Premium Leather for Custom Handbags</h2>
+              <p class="entry-excerpt">Full-grain vs. top-grain leather, global compliance standards, and how to balance material cost with brand quality.</p>
+              <div class="entry-footer">
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+                <span>Read Article <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo logo-light">
+          <span class="logo-icon"><i class="fa-solid fa-briefcase"></i></span>
+          <div class="logo-text">
+            <span class="logo-main">AERLIS</span>
+            <span class="logo-sub">LEATHER GOODS</span>
+          </div>
+        </a>
+        <p>Guangzhou's premier leather goods manufacturer — crafting quality since 2010.</p>
+        <p class="footer-cn">广州市艾尔丽思皮具有限公司</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="index.html#factory">Factory</a></li>
+          <li><a href="factory-videos.html">Videos</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> zinna@gzaerlis.com</p>
+        <p><i class="fa-brands fa-whatsapp"></i> +86 185 2035 0629</p>
+        <p><i class="fa-solid fa-location-dot"></i> No.8, Nanhe 1st Street, Huadu District, Guangzhou, Guangdong, China</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Guangzhou Aerlis Leather Goods Co., Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== 悬浮联系按钮 ========== -->
+  <div class="float-contact">
+    <a href="https://wa.me/8618520350629" target="_blank" rel="noopener" class="float-btn float-whatsapp" aria-label="Contact via WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="float-tooltip">WhatsApp Us</span>
+    </a>
+    <a href="https://mail.google.com/mail/?view=cm&to=zinna@gzaerlis.com" target="_blank" rel="noopener" class="float-btn float-email" aria-label="Send us an Email">
+      <i class="fa-solid fa-envelope"></i>
+      <span class="float-tooltip">Email Us</span>
+    </a>
+  </div>
 
   <script defer src="/_vercel/insights/script.js"></script>
   <script src="script.js"></script>
