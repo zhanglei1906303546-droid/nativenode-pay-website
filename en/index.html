@@ -77,7 +77,7 @@
                 </div>
                 <a href="/en/solutions/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Solutions</a>
                 <a href="/en/cases/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Cases</a>
-                <a href="/en/resources/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Resources</a>
+                <a href="/en/resources/" class="flex items-center hover:text-[#0052FF] py-8 transition-colors">Insights</a>
             </div>
             <div class="flex items-center space-x-4 md:space-x-6">
                 <div class="hidden sm:flex items-center space-x-3 text-sm font-semibold">
@@ -448,7 +448,7 @@
         <a href="/en/solutions/" class="text-gray-900 hover:text-[#0052FF]">Solutions</a>
         <a href="/en/regions/" class="text-gray-900 hover:text-[#0052FF]">Regions</a>
         <a href="/en/cases/" class="text-gray-900 hover:text-[#0052FF]">Cases</a>
-        <a href="/en/resources/" class="text-gray-900 hover:text-[#0052FF]">Resources</a>
+        <a href="/en/resources/" class="text-gray-900 hover:text-[#0052FF]">Insights</a>
         <div class="flex items-center space-x-6 pt-8 text-lg">
             <a href="/en/" class="text-gray-900 border-b-2 border-[#0052FF]">EN</a>
             <span class="text-gray-300">|</span>
@@ -468,30 +468,4 @@
     </script>
 </body>
 </html>
-2xl font-bold hidden md:hidden">
-        <button class="absolute top-6 right-6 text-gray-500 hover:text-gray-900" id="close-menu">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        </button>
-        <a href="/en/solutions/" class="text-gray-900 hover:text-[#0052FF]">Solutions</a>
-        <a href="/en/regions/" class="text-gray-900 hover:text-[#0052FF]">Regions</a>
-        <a href="/en/cases/" class="text-gray-900 hover:text-[#0052FF]">Cases</a>
-        <a href="/en/resources/" class="text-gray-900 hover:text-[#0052FF]">Resources</a>
-        <div class="flex items-center space-x-6 pt-8 text-lg">
-            <a href="/en/" class="text-gray-900 border-b-2 border-[#0052FF]">EN</a>
-            <span class="text-gray-300">|</span>
-            <a href="/zh/" class="text-gray-600 hover:text-gray-900 transition-colors">中文</a>
-        </div>
-    </div>
 
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const closeBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-        closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') mobileMenu.classList.add('hidden');
-        });
-    </script>
-</body>
-</html>
