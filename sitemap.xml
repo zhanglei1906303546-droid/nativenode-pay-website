@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://nativenodepay.com/</loc>
-    <priority>1.0</priority>
-  </url>
-  <!-- English Pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nativenodepay.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://nativenodepay.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nativenodepay.com/en/"/>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nativenodepay.com/zh/</loc>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://nativenodepay.com/en/solutions/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nativenodepay.com/en/regions/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/en/cases/</loc>
+    <loc>https://nativenodepay.com/zh/solutions/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -28,58 +21,31 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nativenodepay.com/en/resources/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/en/resources/middle-east-market-access.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/en/resources/high-value-payment-stability.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/en/resources/how-to-boost-us-checkout-conversions.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <!-- Chinese Pages -->
-  <url>
-    <loc>https://nativenodepay.com/zh/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://nativenodepay.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://nativenodepay.com/zh/"/>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/zh/solutions/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/zh/regions/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/zh/cases/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://nativenodepay.com/zh/industries/</loc>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nativenodepay.com/en/cases/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nativenodepay.com/zh/cases/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nativenodepay.com/en/regions/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nativenodepay.com/zh/regions/</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nativenodepay.com/en/resources/</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://nativenodepay.com/zh/resources/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/zh/resources/how-to-boost-us-checkout-conversions.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/zh/resources/middle-east-market-access.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nativenodepay.com/zh/resources/high-value-payment-stability.html</loc>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>

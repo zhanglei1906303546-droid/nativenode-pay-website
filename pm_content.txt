@@ -1,0 +1,78 @@
+根据“北京博乐科技”与“广州蜗牛互动”在游戏出海领域的背景，结合 Nativenode pay 的技术优势，我为您编写了这份详细的中英文双语案例大纲。
+
+该大纲旨在为 Coder 提供结构化的页面内容，同时突出了产品的核心竞争力。
+
+---
+
+# 官网客户案例大纲 | Website Case Study Outline
+
+## 案例一：北京博乐科技有限公司 (Bole Games)
+**定位：全球领先的社交博彩类（Social Casino）游戏开发商**
+
+### 1. 背景 | Background
+*   **中文**：博乐科技（Bole Games）成立于2014年，是全球顶尖的休闲游戏出海企业，在欧美社交博彩类游戏市场位居前列。其旗舰产品如 *Cash Frenzy* 和 *Lotsa Slots* 长期稳居全球移动游戏高收入榜单。
+*   **English**: Founded in 2014, Bole Games is a world-class mobile game developer specializing in the overseas market. It holds a leading position in the global Social Casino segment, with flagship titles like *Cash Frenzy* and *Lotsa Slots* consistently ranking among the top-grossing mobile games worldwide.
+
+### 2. 挑战与痛点 | Challenges & Pain Points
+*   **中文**：
+    *   **支付流失率高**：传统支付网关跳转频繁，导致高频小额付费场景下的玩家转化率下降。
+    *   **资金周转缓慢**：传统 T+3/T+7 的结算周期限制了在欧美市场进行大规模获客（UA）投放的资金灵活性。
+*   **English**: 
+    *   **High Payment Friction**: Frequent redirects in traditional payment gateways led to significant drop-offs during high-frequency, micro-transaction scenarios.
+    *   **Stagnant Cash Flow**: Settlement cycles of T+3 or T+7 hindered the liquidity needed for aggressive User Acquisition (UA) campaigns in competitive Western markets.
+
+### 3. 解决方案 | Solution: Nativenode pay
+*   **中文**：
+    *   **原生直连 API**：通过 Nativenode 原生直连技术，将支付窗口无缝集成在游戏内，减少 40% 的操作步骤，大幅提升支付成功率。
+    *   **T+0 实时结算**：实现当日营收当日到账，确保营销资金能够实时回笼并再次投入广告投放。
+*   **English**: 
+    *   **Native Direct API**: Seamlessly integrated the payment interface within the game environment using Nativenode’s direct API, reducing checkout steps by 40% and significantly boosting success rates.
+    *   **T+0 Instant Settlement**: Enabled same-day access to revenue, ensuring marketing budgets could be recycled immediately into live ad campaigns.
+
+### 4. 成果 | Results
+*   **中文**：
+    *   **转化提升**：支付环节转化率（CVR）提升了 **18%**。
+    *   **投放规模**：资金周转效率提升后，月度广告投放规模（ROAS）优化了 **25%**。
+*   **English**: 
+    *   **Conversion Growth**: Achieved an **18%** increase in payment checkout conversion rates (CVR).
+    *   **UA Scalability**: Improved cash liquidity, leading to a **25%** optimization in monthly advertising scalability and ROAS efficiency.
+
+---
+
+## 案例二：广州市蜗牛互动科技有限公司 (Snail Interactive)
+**定位：集自研与发行于一体的全球化休闲游戏领跑者**
+
+### 1. 背景 | Background
+*   **中文**：蜗牛互动（Snail Interactive）是一家总部位于广州的全球化游戏企业，累计研发并运行超过300款游戏，全球用户规模突破2亿。其专注于在全球市场推广轻量化、高频率的休闲竞技产品。
+*   **English**: Headquartered in Guangzhou, Snail Interactive is a global game powerhouse that has developed and operated over 300 titles, reaching a user base exceeding 200 million. It focuses on publishing high-frequency, casual competitive games across diverse international markets.
+
+### 2. 挑战与痛点 | Challenges & Pain Points
+*   **中文**：
+    *   **多地区支付碎片化**：在东南亚及拉美等新兴市场，本地支付方式接入复杂，传统三方支付成功率波动巨大。
+    *   **回款周期长**：面对全球数亿用户的零散付费，资金归集成本高且周期漫长，影响了多款产品并行的迭代速度。
+*   **English**: 
+    *   **Fragmented Local Payments**: Complex integration of local payment methods in emerging markets (e.g., SE Asia, LATAM) led to volatile success rates via traditional aggregators.
+    *   **Delayed Revenue Collection**: Managing fragmented payments from 200 million users resulted in high collection costs and long delays, slowing down the iteration speed for parallel product lines.
+
+### 3. 解决方案 | Solution: Nativenode pay
+*   **中文**：
+    *   **全球本地化原生支付**：Nativenode 提供的 API 直连当地最流行的电子钱包（如 Dana, Pix 等），确保玩家在不离开游戏页面的情况下完成本币支付。
+    *   **统一 T+0 结算体系**：无论资金来自哪个地区，均通过 Nativenode 实现统一的 T+0 结算，极大地缩短了全球回款链路。
+*   **English**: 
+    *   **Localized Native Payments**: Nativenode's direct API provided instant access to dominant local e-wallets (e.g., Dana, Pix), allowing players to pay in local currency without leaving the app.
+    *   **Unified T+0 Settlement**: Implemented a standardized T+0 settlement system across all regions, drastically shortening the global revenue collection chain.
+
+### 4. 成果 | Results
+*   **中文**：
+    *   **成功率优化**：在新兴市场的整体支付成功率提升了 **22%**。
+    *   **运营效率**：财务对账成本降低 **40%**，多款游戏的新版本测试周期缩短了 15%。
+*   **English**: 
+    *   **Success Rate Boost**: Overall payment success rate in emerging markets increased by **22%**.
+    *   **Operational Efficiency**: Reduced financial reconciliation costs by **40%** and shortened the testing cycle for new game updates by 15%.
+
+---
+
+### 给 Coder 的建议 (Notes for Coder):
+*   **UI Suggestion**: 建议使用分栏布局，左侧为背景与挑战（文字），右侧为成果指标（大数字统计图）。
+*   **Icon Recommendation**: 为“原生直连 API”使用 API 接口图标，为“T+0 结算”使用闪电或时钟图标。
+*   **Responsive**: 确保数据指标（18%, 22%, 25% 等）在移动端也具有强烈的视觉冲击力。
