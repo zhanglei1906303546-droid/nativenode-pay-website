@@ -63,6 +63,14 @@
 *   **Case 2: Snail Interactive (蜗牛互动)**
     *   **Result (EN)**: 22% increase in success rates in emerging markets.
     *   **结果 (ZH)**: 新兴市场支付成功率提升 22%。
+*   **Case 3: JoiGen (AI Face/Media Project)**
+    *   **Challenge (EN)**: High-concurrency IAP spikes during viral trends and complex global multi-currency settlement.
+    *   **Solution (EN)**: Native Direct Gateway with millisecond response + Support for 100+ local payment methods.
+    *   **Result (EN)**: 25% increase in IAP success rate, 30% improvement in cash flow turnover via T+0 settlement.
+    *   **挑战 (ZH)**: 爆款期间的高并发内购压力，以及全球多货币结算的复杂性。
+    *   **方案 (ZH)**: 毫秒级响应的原生直连网关 + 支持 100+ 全球本地支付方式。
+    *   **结果 (ZH)**: 内购支付成功率提升 25%，通过 T+0 结算使资金周转效率提升 30%。
+
 
 ---
 

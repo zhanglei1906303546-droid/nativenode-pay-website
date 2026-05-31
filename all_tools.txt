@@ -1,0 +1,732 @@
+
+  Tool                                              Description
+  ────────────────────────────────────────────────────────────────────────────────────────────────────
+  start_google_auth                                 Manually initiate Google OAuth authentication flow.
+  start_gmail_auth                                  Start OAuth flow for Gmail scopes.
+  exchange_gmail_connector_code                     Exchange and store a Gmail OAuth code from the Phoenix PC local callback.
+  start_twitter_auth                                Authorize a user's X (Twitter) account for the current workspace.
+  list_all_authorizations                           List all connected (authorized) connectors for the current user.
+  start_github_auth                                 Start GitHub OAuth authorization flow.
+  exchange_github_connector_code                    Exchange and store a GitHub OAuth code from the Phoenix PC local callback.
+  manage_github_org_access                          Manage GitHub organization access for the connected OAuth App.
+  start_linkedin_auth                               Start LinkedIn OAuth authorization flow.
+  start_notion_auth                                 发起 Notion OAuth 2.0 授权流程。
+  set_notion_token                                  Set or update Notion Integration Token for a user.
+  check_notion_token                                Check the status of a user's Notion Integration Token.
+  delete_notion_token                               Delete a user's Notion Integration Token.
+  list_notion_token_users                           List all users with stored Notion Integration Tokens.
+  search_notion_workspace                           Search pages and databases in the user's Notion workspace.
+  get_notion_page_content                           Retrieve a Notion page's properties and (optionally) its content blocks.
+  create_notion_page                                Create a new page (note) in the user's Notion workspace.
+  update_notion_page_properties                     Update properties of an existing Notion page.
+  append_notion_blocks                              Append new content blocks to a Notion page or block.
+  delete_notion_block                               Delete (archive) a block from a Notion page.
+  get_notion_database                               Retrieve a Notion database's schema (title, properties and their types).
+  query_notion_database                             Query a Notion database with optional filters and sorts.
+  add_notion_comment                                Add a comment to a Notion page and optionally read existing comments.
+  get_notion_comments                               Retrieve all comments on a Notion page.
+  list_notion_users                                 List users in the Notion workspace.
+  start_vercel_auth                                 Start Vercel OAuth authorization flow.
+  exchange_vercel_connector_code                    Exchange and store a Vercel OAuth code from the Phoenix PC local callback.
+  get_vercel_user_profile                           Return the connected Vercel account profile (id, email, name, username).
+  list_vercel_projects                              List Vercel projects accessible by the connected account.
+  get_vercel_project                                Get full Vercel project detail (env count, framework, latest deployment summary)
+  list_vercel_deployments                           List recent Vercel deployments (filterable by project / state / target).
+  get_vercel_deployment                             Get a single Vercel deployment's full detail (state, build duration, alias, erro
+  get_vercel_deployment_logs                        Fetch build/runtime log events for a Vercel deployment.
+  set_higgsfield_credentials                        Set or update Higgsfield API credentials for a user.
+  check_higgsfield_credentials                      Check the status of a user's Higgsfield API credentials.
+  delete_higgsfield_credentials                     Delete the current accio_id's Higgsfield API credentials.
+  generate_higgsfield_image                         Generate an image using the Higgsfield AI API.
+  generate_higgsfield_video                         Generate a video using the Higgsfield AI API.
+  get_higgsfield_generation_status                  Get the status of a Higgsfield generation request.
+  cancel_higgsfield_generation                      Cancel a queued Higgsfield generation request.
+  set_klaviyo_credentials                           Set, update, or disconnect the Klaviyo API key for the current workspace.
+  check_klaviyo_credentials                         Check the status of the Klaviyo API credential for the current workspace.
+  delete_klaviyo_credentials                        Delete the current workspace's Klaviyo API credential.
+  klaviyo_get_accounts                              Retrieve all Klaviyo accounts accessible with the current API key.
+  klaviyo_get_tracking_settings                     Retrieve Klaviyo tracking settings for the account.
+  klaviyo_get_account                               Retrieve a single Klaviyo account by ID.
+  klaviyo_update_tracking_setting                   Update a Klaviyo tracking setting.
+  klaviyo_get_profiles                              List Klaviyo profiles (contacts) with optional email filter.
+  klaviyo_create_or_update_profile                  Create or update a Klaviyo profile (contact). Uses upsert semantics — if a
+  klaviyo_get_lists                                 List all Klaviyo lists.
+  klaviyo_create_list                               Create a new Klaviyo list.
+  klaviyo_add_profiles_to_list                      Add one or more profiles to a Klaviyo list by profile ID.
+  klaviyo_get_segments                              List all Klaviyo segments.
+  klaviyo_subscribe_profiles                        Subscribe one or more profiles to a Klaviyo list (with double opt-in
+  klaviyo_unsubscribe_profiles                      Unsubscribe one or more profiles from a Klaviyo list.
+  klaviyo_get_tags                                  List all Klaviyo tags.
+  klaviyo_create_tag                                Create a new tag in Klaviyo.
+  klaviyo_get_profile                               Retrieve a single Klaviyo profile by ID.
+  klaviyo_update_profile                            Update an existing Klaviyo profile.
+  klaviyo_get_list                                  Retrieve a single Klaviyo list by ID.
+  klaviyo_update_list                               Update (rename) a Klaviyo list.
+  klaviyo_delete_list                               Delete a Klaviyo list.
+  klaviyo_remove_profiles_from_list                 Remove one or more profiles from a Klaviyo list.
+  klaviyo_get_segment                               Retrieve a single Klaviyo segment by ID.
+  klaviyo_update_segment                            Update (rename) a Klaviyo segment.
+  klaviyo_delete_segment                            Delete a Klaviyo segment.
+  klaviyo_get_tag                                   Retrieve a single Klaviyo tag by ID.
+  klaviyo_update_tag                                Update (rename) a Klaviyo tag.
+  klaviyo_delete_tag                                Delete a Klaviyo tag.
+  klaviyo_get_tag_groups                            List all Klaviyo tag groups.
+  klaviyo_create_tag_group                          Create a new tag group in Klaviyo.
+  klaviyo_bulk_import_profiles                      Bulk import profiles into Klaviyo.
+  klaviyo_merge_profiles                            Merge two Klaviyo profiles into one.
+  klaviyo_create_segment                            Create a new Klaviyo segment.
+  klaviyo_get_profile_lists                         Retrieve all lists a profile is a member of.
+  klaviyo_get_profile_segments                      Retrieve all segments a profile is included in.
+  klaviyo_suppress_profiles                         Suppress one or more profiles by email (mark them as do-not-email).
+  klaviyo_unsuppress_profiles                       Unsuppress (re-enable email sending to) one or more profiles by email.
+  klaviyo_get_list_profiles                         Retrieve profiles (members) of a Klaviyo list.
+  klaviyo_get_segment_profiles                      Retrieve profiles (members) of a Klaviyo segment.
+  klaviyo_delete_profile                            Request permanent deletion of a Klaviyo profile via the Data Privacy API.
+  klaviyo_tag_resources                             Assign a tag to one or more resources (campaigns, flows, lists, or segments).
+  klaviyo_untag_resources                           Remove a tag from one or more resources (campaigns, flows, lists, or segments).
+  klaviyo_get_bulk_import_job                       Get the status of a bulk profile import job.
+  klaviyo_get_campaigns                             List Klaviyo campaigns. Klaviyo API requires a channel filter.
+  klaviyo_create_campaign                           Create a new email campaign in Draft status.
+  klaviyo_get_flows                                 List Klaviyo flows (automated email/SMS sequences).
+  klaviyo_update_flow_status                        Update a Klaviyo flow's status (e.g. activate or pause).
+  klaviyo_get_templates                             List Klaviyo email templates.
+  klaviyo_create_template                           Create a new email template with custom HTML.
+  klaviyo_get_universal_content                     List universal content blocks in Klaviyo Composer.
+  klaviyo_get_campaign                              Retrieve a single Klaviyo campaign by ID.
+  klaviyo_update_campaign                           Update a Klaviyo campaign.
+  klaviyo_delete_campaign                           Delete a Klaviyo campaign.
+  klaviyo_clone_campaign                            Clone (duplicate) a Klaviyo campaign.
+  klaviyo_send_campaign                             Send a Klaviyo campaign immediately.
+  klaviyo_schedule_campaign                         Schedule an existing Draft campaign to be sent at a future time.
+  klaviyo_get_template                              Retrieve a single Klaviyo email template by ID.
+  klaviyo_update_template                           Update a Klaviyo email template.
+  klaviyo_delete_template                           Delete a Klaviyo email template.
+  klaviyo_render_template                           Render a Klaviyo template with optional context variables.
+  klaviyo_clone_template                            Clone (duplicate) a Klaviyo email template.
+  klaviyo_get_flow                                  Retrieve a single Klaviyo flow by ID.
+  klaviyo_delete_flow                               Delete a Klaviyo flow.
+  klaviyo_get_flow_actions                          List all actions belonging to a Klaviyo flow.
+  klaviyo_get_flow_action                           Retrieve a single Klaviyo flow action by ID.
+  klaviyo_get_flow_messages_for_action              List flow messages attached to a specific flow action.
+  klaviyo_get_flow_message                          Retrieve a single Klaviyo flow message by ID.
+  klaviyo_update_flow_action                        Update a Klaviyo flow action's ``definition`` (PATCH /api/flow-actions/{id}/).
+  klaviyo_get_flow_message_template                 Retrieve the template assigned to a flow message.
+  klaviyo_get_flow_tags                             Retrieve all tags attached to a Klaviyo flow.
+  klaviyo_get_campaign_message                      Retrieve a single Klaviyo campaign message by ID.
+  klaviyo_update_campaign_message                   Update a Klaviyo campaign message (label or full ``definition``).
+  klaviyo_assign_template_to_campaign_message       Assign an email template to a campaign message.
+  klaviyo_cancel_campaign_send                      Cancel or revert a scheduled / sending campaign send job.
+  klaviyo_get_catalog_items                         List catalog items in Klaviyo.
+  klaviyo_create_catalog_item                       Create a catalog item in Klaviyo.
+  klaviyo_get_coupons                               List all Klaviyo coupons.
+  klaviyo_create_coupon                             Create a new coupon definition in Klaviyo.
+  klaviyo_get_coupon_codes                          List coupon codes for a specific coupon.
+  klaviyo_create_coupon_code                        Create a unique coupon code under an existing coupon.
+  klaviyo_get_catalog_item                          Retrieve a single catalog item by ID.
+  klaviyo_update_catalog_item                       Update a catalog item in Klaviyo.
+  klaviyo_delete_catalog_item                       Delete a catalog item from Klaviyo.
+  klaviyo_get_coupon                                Retrieve a single coupon by ID.
+  klaviyo_update_coupon                             Update a coupon in Klaviyo.
+  klaviyo_delete_coupon                             Delete a coupon from Klaviyo.
+  klaviyo_get_coupon_code                           Retrieve a single coupon code by ID.
+  klaviyo_update_coupon_code                        Update a coupon code in Klaviyo.
+  klaviyo_delete_coupon_code                        Delete a coupon code from Klaviyo.
+  klaviyo_get_catalog_variants                      List catalog variants in Klaviyo.
+  klaviyo_create_catalog_variant                    Create a catalog variant in Klaviyo.
+  klaviyo_update_catalog_variant                    Update a catalog variant in Klaviyo.
+  klaviyo_delete_catalog_variant                    Delete a catalog variant from Klaviyo.
+  klaviyo_get_catalog_categories                    List catalog categories in Klaviyo.
+  klaviyo_create_catalog_category                   Create a catalog category in Klaviyo.
+  klaviyo_update_catalog_category                   Update a catalog category in Klaviyo.
+  klaviyo_delete_catalog_category                   Delete a catalog category from Klaviyo.
+  klaviyo_get_events                                List Klaviyo events (tracked user activities).
+  klaviyo_create_event                              Track a custom event in Klaviyo.
+  klaviyo_get_metrics                               List all Klaviyo metrics (event types tracked in the account).
+  klaviyo_get_reviews                               List product reviews in Klaviyo.
+  klaviyo_get_web_feeds                             List web feeds configured in Klaviyo.
+  klaviyo_create_web_feed                           Create a new web feed in Klaviyo.
+  klaviyo_get_event                                 Retrieve a single Klaviyo event by ID.
+  klaviyo_get_review                                Retrieve a single product review by ID.
+  klaviyo_update_review                             Update a product review status in Klaviyo.
+  klaviyo_get_web_feed                              Retrieve a single web feed by ID.
+  klaviyo_update_web_feed                           Update a web feed in Klaviyo.
+  klaviyo_delete_web_feed                           Delete a web feed from Klaviyo.
+  klaviyo_bulk_create_events                        Bulk create events in Klaviyo.
+  klaviyo_query_metric_aggregates                   Query aggregated metric data from Klaviyo.
+  klaviyo_request_profile_deletion                  Submit a GDPR / CCPA data deletion request for a profile.
+  klaviyo_get_forms                                 List all Klaviyo forms (sign-up forms, pop-ups, etc.).
+  klaviyo_get_images                                List images stored in the Klaviyo image library.
+  klaviyo_upload_image_from_url                     Import an image into Klaviyo's image library from a public URL.
+  klaviyo_get_translations                          List translation entries in Klaviyo.
+  klaviyo_get_form                                  Retrieve a single Klaviyo form by ID.
+  klaviyo_get_image                                 Retrieve a single image from the Klaviyo image library.
+  klaviyo_update_image                              Update an image's metadata in Klaviyo.
+  klaviyo_get_form_versions                         List all versions (drafts/published) of a Klaviyo form.
+  klaviyo_get_form_version                          Retrieve a single Klaviyo form version by ID.
+  klaviyo_query_campaign_values                     Query campaign performance values (aggregated metrics).
+  klaviyo_query_flow_values                         Query flow performance values (aggregated metrics).
+  klaviyo_query_flow_series                         Query flow performance as a time series.
+  klaviyo_query_campaign_series                     Query campaign performance metrics over a given timeframe.
+  klaviyo_query_flow_sub_values                     Query flow per-message aggregated performance values.
+  klaviyo_query_form_values                         Query Klaviyo form (signup form / popup) aggregated performance values.
+  klaviyo_query_form_series                         Query Klaviyo form performance as a time series.
+  klaviyo_query_segment_values                      Query Klaviyo segment aggregated performance values.
+  klaviyo_query_segment_series                      Query Klaviyo segment performance as a time series.
+  klaviyo_get_data_sources                          List all data sources (custom object definitions) in Klaviyo.
+  klaviyo_create_data_source                        Create a new data source in Klaviyo.
+  klaviyo_get_custom_object_definitions             List all custom object definitions (object types) in the Klaviyo account.
+  klaviyo_get_custom_object_definition              Retrieve a single custom object definition by ID.
+  klaviyo_get_custom_object_record                  Retrieve a single custom object record by its compound ID.
+  klaviyo_create_custom_object_record               Ingest a data source record so Klaviyo can derive a custom object record.
+  set_shippo_credentials                            Set or update Shippo API credentials.
+  check_shippo_credentials                          Check the status of Shippo API credentials.
+  delete_shippo_credentials                         Delete Shippo API credentials for the current account.
+  validate_shippo_address                           Validate whether an address is real and deliverable (地址验证).
+  get_shippo_carrier_accounts                       Get a single carrier account by ID, or list carrier accounts with optional filte
+  create_shippo_customs_item                        Create a customs item for international shipping declarations.
+  get_shippo_customs_items                          Get a single customs item by ID or list all customs items.
+  create_shippo_customs_declaration                 Create a customs declaration for international shipments (海关申报 / customs form).
+  get_shippo_customs_declarations                   Get a single customs declaration by ID or list all declarations.
+  create_shippo_shipment                            Create a shipment and get available shipping rates from multiple carriers.
+  get_shippo_shipments                              Retrieve shipment records — the shipping requests you created (with sender/recip
+  get_shippo_rates                                  Retrieve rate quotes for an existing shipment. Rates are generated when you crea
+  purchase_shippo_label                             Purchase a shipping label (transaction) using a selected rate.
+  get_shippo_transactions                           Retrieve purchased shipping label records (transactions). Each transaction repre
+  track_shippo_shipment                             Look up current tracking status and history for a package (one-time query).
+  create_shippo_manifest                            Create a manifest (SCAN form / 当日交单清单) — a carrier end-of-day closeout document
+  get_shippo_manifests                              Get a single manifest by ID or list all manifests.
+  create_shippo_pickup                              Schedule a USPS/DHL Express carrier pickup (预约上门取件).
+  create_shippo_refund                              Request a refund/void for a purchased shipping label (退款 / 作废面单 / cancel label).
+  get_shippo_refunds                                Get a single refund by ID or list all refunds.
+  set_semrush_credentials                           Set or update Semrush API credentials for a user.
+  check_semrush_credentials                         Check the status of a user's Semrush API credentials.
+  delete_semrush_credentials                        Delete the current accio_id's Semrush API credentials.
+  get_domain_organic_keywords                       Get organic search keywords that bring traffic to a domain.
+  get_domain_paid_keywords                          Get paid search keywords (Google Ads) for a domain.
+  get_domain_overview                               Get comprehensive SEO overview for a domain.
+  get_keyword_overview                              Get keyword overview data including volume, CPC, and competition.
+  get_domain_ranks_all                              Get domain overview across all regional databases.
+  get_domain_rank_history                           Get domain ranking history over time (monthly or daily).
+  get_domain_ranks_all_json                         Get domain rankings across all databases in JSON format.
+  get_subdomain_overview                            Get subdomain overview with key SEO metrics (one database).
+  get_subdomain_ranks_all                           Get subdomain overview across all regional databases.
+  get_subdomain_history                             Get subdomain ranking history over time (monthly or daily).
+  get_subfolder_overview                            Get subfolder overview with key SEO metrics (one database).
+  get_subfolder_ranks_all                           Get subfolder overview across all regional databases.
+  get_subfolder_history                             Get subfolder ranking history over time (monthly or daily).
+  get_url_overview                                  Get URL overview with key SEO metrics (one database).
+  get_url_ranks_all                                 Get URL overview across all regional databases.
+  get_url_history                                   Get URL ranking history over time (monthly or daily).
+  get_backlinks_overview                            Get backlink overview for a domain or URL.
+  get_trends_traffic_summary                        Get traffic summary for multiple domains using Semrush Trends API.
+  get_trends_traffic_sources                        Get traffic sources breakdown for domains using Semrush Trends API.
+  get_trends_geo_distribution                       Get geographic distribution of traffic for domains using Semrush Trends API.
+  set_yuque_credentials                             Set, update, or disconnect Yuque personal access token for the current user.
+  check_yuque_credentials                           Check the status of the current user's Yuque credentials.
+  delete_yuque_credentials                          Delete the current user's Yuque credentials.
+  yuque_get_user                                    Get the current authenticated Yuque user's profile information.
+  yuque_list_user_groups                            List all teams/groups that a user belongs to.
+  yuque_search                                      Search for documents or knowledge bases in the user's Yuque workspace.
+  yuque_list_books                                  List all knowledge bases (repos) owned by a user or group.
+  yuque_get_book                                    Get detailed information of a single Yuque knowledge base (repo).
+  yuque_create_book                                 Create a new Yuque knowledge base under the given user or group.
+  yuque_update_book                                 Update an existing Yuque knowledge base's metadata.
+  yuque_list_docs                                   List all documents in a Yuque knowledge base.
+  yuque_get_doc                                     Get the full content of a single document in a Yuque knowledge base.
+  yuque_create_doc                                  Create a new document in a Yuque knowledge base.
+  yuque_update_doc                                  Update an existing document in a Yuque knowledge base.
+  yuque_get_toc                                     Get the table of contents (TOC) tree of a Yuque knowledge base.
+  yuque_update_toc                                  Update the table of contents of a Yuque knowledge base (add / move / edit / remo
+  yuque_delete_doc                                  Delete a document from a Yuque knowledge base.
+  yuque_delete_book                                 Delete a Yuque knowledge base (repo) permanently.
+  start_cj_auth                                     Start CJ authorization flow.
+  get_cj_access_token                               Get the current workspace CJ access token.
+  start_square_auth                                 Manually initiate Square POS OAuth authentication flow.
+  start_alibaba_com_auth                            Generate an Alibaba second-party authorization login URL.
+  exchange_alibaba_connector_token                  Exchange and store Alibaba OAuth access_token from local callback via MCP.
+  start_shopline_auth                               Start Shopline authorization for a store.
+  get_shopline_access_token                         Get Shopline token metadata only; this does not return the raw access token valu
+  get_shopline_access_token_raw                     Get the raw Shopline access token when you explicitly need the token value itsel
+  claim_shopline_store                              Claim a pending Shopline store installation to the current workspace.
+  start_okki_auth                                   Start Okki OAuth authorization flow (PKCE mode).
+  start_visable_auth                                Start Visable OAuth authorization flow (PKCE mode).
+  start_figma_auth                                  Start Figma OAuth 2.0 authorization flow with PKCE.
+  get_current_user                                  Get the authenticated Figma user's profile and approximate plan level.
+  check_user_plan                                   Check the current Figma user's plan level and available feature scopes.
+  validate_scope_access                             Validate whether the current Figma credential has a specific OAuth scope.
+  read_file_content                                 Read the content and node tree of a Figma file.
+  read_file_metadata                                Read metadata of a Figma file without fetching the full node tree.
+  read_file_versions                                Read the version history of a Figma file.
+  read_file_comments                                Read all comments on a Figma file, including replies, positions, and authors.
+  create_comment                                    Create a new comment on a Figma file or a specific node.
+  delete_comment                                    Delete a comment from a Figma file.
+  read_library_assets                               Read components and styles published from a personal Figma file.
+  read_dev_resources                                Read development resources (design tokens, annotations, spacing systems) from a 
+  create_dev_resource                               Create a new development resource (design token, annotation, or link) on a Figma
+  update_dev_resource                               Update an existing development resource on a Figma file.
+  list_figma_team_projects                          List projects within a Figma team.
+  list_figma_project_files                          List files within a Figma project.
+  delete_dev_resource                               Delete a development resource from a Figma file.
+  list_figma_connections                            List all Figma accounts currently connected to this workspace.
+  start_huggingface_auth                            Initiate OAuth 2.0 + PKCE authorization with HuggingFace.
+  search_huggingface_models                         Search for AI models on HuggingFace Hub.
+  get_huggingface_model_info                        Get detailed information about a specific HuggingFace model.
+  search_huggingface_datasets                       Search for datasets on HuggingFace Hub.
+  search_huggingface_spaces                         Search for Spaces on HuggingFace Hub.
+  list_my_huggingface_repos                         List the authenticated user's own repositories on HuggingFace.
+  create_huggingface_repo                           Create a new repository on HuggingFace Hub.
+  delete_huggingface_repo                           Delete a repository on HuggingFace Hub. This action is irreversible.
+  huggingface_chat_inference                        Run chat completion using a model on HuggingFace Inference API.
+  huggingface_text_embedding                        Generate text embeddings using a model on HuggingFace Inference API.
+  move_huggingface_repo                             Move or rename a repository on HuggingFace Hub.
+  update_huggingface_repo_settings                  Update settings for a HuggingFace repository.
+  check_huggingface_billing                         Check the authenticated user's HuggingFace billing and subscription status.
+  list_huggingface_app_repos                        List repositories on HuggingFace that were created by this OAuth application.
+  run_huggingface_job                               Run a Job on HuggingFace infrastructure.
+  get_huggingface_job_status                        Get the status of a HuggingFace Job.
+  cancel_huggingface_job                            Cancel a running HuggingFace Job.
+  list_huggingface_webhooks                         List all webhooks configured on your HuggingFace account.
+  create_huggingface_webhook                        Create a new webhook on HuggingFace.
+  delete_huggingface_webhook                        Delete a webhook from HuggingFace.
+  list_huggingface_discussions                      List discussions and pull requests on a HuggingFace repository.
+  create_huggingface_discussion                     Create a new discussion on a HuggingFace repository.
+  comment_huggingface_discussion                    Add a comment to an existing discussion or pull request on HuggingFace.
+  start_wordpress_auth                              Start the WordPress.com OAuth 2.0 authorization flow.
+  check_wordpress_credentials                       Check the status of WordPress.com credentials for the current workspace.
+  delete_wordpress_credentials                      Disconnect WordPress.com credentials for the current workspace.
+  get_wordpress_me                                  Return the currently authorized WordPress.com user profile.
+  list_wordpress_sites                              List all WordPress.com sites the authorized user can access.
+  get_wordpress_site                                Get a single WordPress.com site's metadata.
+  list_wordpress_posts                              List posts on a WordPress.com site.
+  get_wordpress_post                                Fetch a single post (full content + meta).
+  create_wordpress_post                             Create a new post on a WordPress.com site.
+  update_wordpress_post                             Update an existing post (PATCH-style: only sent fields are changed).
+  delete_wordpress_post                             Move a post to trash (or permanently delete if already trashed).
+  list_wordpress_pages                              List static pages on a WordPress.com site.
+  get_wordpress_page                                Fetch a single page.
+  create_wordpress_page                             Create a new static page.
+  update_wordpress_page                             Update an existing page (only sent fields are changed).
+  delete_wordpress_page                             Move a page to trash (or permanently delete on second call).
+  list_wordpress_media                              List media items in a WordPress.com site.
+  get_wordpress_media                               Fetch a single media item's metadata (URL, mime, dimensions, EXIF...).
+  upload_wordpress_media_from_urls                  Import one or more remote media files into the WordPress.com media library.
+  list_wordpress_site_comments                      List comments across an entire WordPress.com site.
+  list_wordpress_post_comments                      List comments on a specific WordPress.com post.
+  create_wordpress_comment                          Post a new top-level comment on a WordPress.com post (as the authorized user).
+  delete_wordpress_comment                          Move a comment to trash (or permanently delete on second call).
+  list_wordpress_categories                         List categories on a WordPress.com site.
+  get_wordpress_category                            Fetch a single category by slug.
+  list_wordpress_tags                               List tags on a WordPress.com site.
+  get_wordpress_tag                                 Fetch a single tag by slug.
+  get_wordpress_site_stats                          Get a high-level stats snapshot for a WordPress.com site (visitors / views / fol
+  get_wordpress_top_posts                           Get top posts / pages by views for a site over a period.
+  get_wordpress_visits                              Get visit / view trends for a site (time-series).
+  start_microsoft365_auth                           Start Microsoft 365 OAuth 2.0 authorization.
+  set_microsoft365_credentials                      Manually register a Microsoft Graph access token.
+  search_microsoft365_emails                        Search messages in the authenticated user's Microsoft 365 mailbox.
+  get_microsoft365_email_detail                     Fetch a single message by id, including full body and recipients.
+  send_microsoft365_email                           Send a new email on behalf of the authenticated Microsoft 365 user.
+  reply_microsoft365_email                          Reply to an existing email message.
+  forward_microsoft365_email                        Forward an existing email message to new recipients.
+  list_microsoft365_email_attachments               List attachments on an email message.
+  create_microsoft365_draft                         Create a draft email in the authenticated user's Microsoft 365 mailbox.
+  delete_microsoft365_message                       Delete an email message from the authenticated user's Microsoft 365 mailbox.
+  download_microsoft365_attachment                  Download the content of an email attachment.
+  move_microsoft365_message                         Move an email message to a different folder in the mailbox.
+  update_microsoft365_draft                         Update an existing draft email in the mailbox.
+  copy_microsoft365_message                         Copy an email message to a different folder in the mailbox.
+  list_microsoft365_mail_folders                    List all mail folders in the user's mailbox.
+  search_microsoft365_contacts                      Search the authenticated user's Microsoft 365 personal contacts.
+  get_microsoft365_contact                          Get details of a specific Microsoft 365 personal contact by ID.
+  create_microsoft365_contact                       Create a new contact in the authenticated user's Microsoft 365 personal contacts
+  update_microsoft365_contact                       Update an existing contact in Microsoft 365 personal contacts.
+  delete_microsoft365_contact                       Delete a contact from Microsoft 365 personal contacts.
+  get_microsoft365_user_profile                     Return the connected Microsoft 365 user's profile (verifies credential).
+  list_microsoft365_events                          List upcoming calendar events for the authenticated Microsoft 365 user.
+  get_microsoft365_event                            Fetch a single calendar event by id.
+  create_microsoft365_event                         Create a new calendar event.
+  update_microsoft365_event                         Update an existing calendar event (partial update / PATCH).
+  delete_microsoft365_event                         Delete a calendar event by id.
+  accept_microsoft365_event                         Accept a meeting invitation / calendar event.
+  decline_microsoft365_event                        Decline a meeting invitation / calendar event.
+  tentatively_accept_microsoft365_event             Tentatively accept a meeting invitation / calendar event.
+  list_microsoft365_event_instances                 List instances of a recurring calendar event.
+  list_microsoft365_drive_items                     List files and folders in the user's OneDrive.
+  search_microsoft365_drive                         Search across the user's OneDrive for files and folders.
+  get_microsoft365_drive_item                       Get metadata (name, size, type, timestamps) for a specific OneDrive item.
+  upload_microsoft365_drive_file                    Upload a file (up to 250 MB) to OneDrive.
+  create_microsoft365_drive_folder                  Create a new folder in OneDrive.
+  delete_microsoft365_drive_item                    Delete a file or folder from OneDrive.
+  download_microsoft365_drive_file                  Download and return the actual content of a file from OneDrive.
+  move_rename_microsoft365_drive_item               Move or rename a file or folder in OneDrive.
+  copy_microsoft365_drive_item                      Copy a file or folder to a different location in OneDrive.
+  create_microsoft365_sharing_link                  Create a sharing link for a file or folder in OneDrive.
+  list_microsoft365_teams                           List the user's joined Microsoft Teams and their channels.
+  list_microsoft365_chats                           List the user's 1:1 and group chats in Microsoft Teams.
+  send_microsoft365_chat_message                    Send a message to a 1:1 or group chat in Microsoft Teams.
+  list_microsoft365_channel_messages                List recent messages in a Microsoft Teams channel.
+  send_microsoft365_channel_message                 Post a message to a Microsoft Teams channel.
+  list_microsoft365_chat_messages                   List messages in a 1:1 or group chat in Microsoft Teams.
+  reply_microsoft365_channel_message                Reply to a specific message in a Microsoft Teams channel.
+  get_microsoft365_chat_message_detail              Get detailed information about a specific chat message in Microsoft Teams.
+  list_microsoft365_channel_message_replies         List replies to a specific message in a Microsoft Teams channel.
+  list_microsoft365_notebooks                       List the user's OneNote notebooks.
+  list_microsoft365_sections                        List sections in a specific OneNote notebook.
+  list_microsoft365_pages                           List pages in a specific OneNote section.
+  get_microsoft365_page_content                     Get the HTML content of a specific OneNote page.
+  create_microsoft365_page                          Create a new page in a OneNote section.
+  create_microsoft365_notebook                      Create a new OneNote notebook.
+  create_microsoft365_section                       Create a new section in a OneNote notebook.
+  delete_microsoft365_page                          Delete a OneNote page.
+  search_gmail_messages                             Search Gmail messages
+  get_gmail_message_content                         Get Gmail message content
+  get_gmail_messages_content_batch                  Get Gmail messages content in batch
+  get_gmail_attachment_content                      Get Gmail attachment content
+  send_gmail_message                                Send Gmail message
+  get_gmail_thread_content                          Get Gmail thread content
+  get_gmail_threads_content_batch                   Get Gmail threads content in batch
+  list_gmail_labels                                 List Gmail labels
+  setup_gmail_watch                                 Set up Gmail watch for push notifications.
+  stop_gmail_watch                                  Stop Gmail watch and remove stored config.
+  get_gmail_watch_status                            Get current Gmail watch config and expiration for the user.
+  renew_gmail_watch                                 Renew Gmail watch (extends expiration by ~7 days).
+  get_user_profile                                  Get detailed profile information for a user by user ID.
+  get_user_by_screen_name                           Fetches a user by screen name (username).
+  get_user_by_id                                    Fetches a user by ID.
+  get_user_followers                                Retrieves a list of followers for a given user.
+  get_user_following                                Retrieves users the given user is following.
+  get_user_followers_you_know                       Retrieves a list of common followers (simulated).
+  get_user_subscriptions                            Retrieves users the specified user is subscribed to (uses following as proxy).
+  post_tweet                                        Post a tweet with optional media (images), reply, and tags.
+  delete_tweet                                      Delete a tweet by its ID.
+  get_tweet_details                                 Get detailed information about a specific tweet.
+  create_poll_tweet                                 Create a tweet with a poll.
+  vote_on_poll                                      Vote on a poll (mocked; Twitter API v2 does not support programmatic voting).
+  favorite_tweet                                    Favorites (likes) a tweet.
+  unfavorite_tweet                                  Unfavorites (unlikes) a tweet.
+  bookmark_tweet                                    Adds the tweet to bookmarks.
+  delete_bookmark                                   Removes the tweet from bookmarks.
+  delete_all_bookmarks                              Deletes all bookmarks (simulated by fetching and removing one by one).
+  get_timeline                                      Get tweets from your home timeline (For You).
+  get_latest_timeline                               Get tweets from your home timeline (Following).
+  search_twitter                                    Search Twitter with a query. product: 'Top' (relevancy) or 'Latest' (recency).
+  get_trends                                        Retrieves trending topics on Twitter.
+  get_highlights_tweets                             Retrieves highlighted tweets from a user's timeline (simulated via user timeline
+  get_user_mentions                                 Get tweets mentioning a specific user.
+  create_github_repo                                Create a new GitHub repository, either under the authenticated user
+  fork_github_repo                                  Fork an existing GitHub repository to the authenticated user's account.
+  list_github_repos                                 List GitHub repositories accessible to the authenticated user,
+  star_github_repo                                  Star a GitHub repository as the authenticated user.
+  unstar_github_repo                                Unstar a GitHub repository as the authenticated user.
+  list_github_starred                               List repositories that the authenticated user has starred.
+  list_github_issues                                List GitHub issues (search-backed; cross-repo or scoped).
+  list_github_pull_requests                         List GitHub pull requests (search-backed; cross-repo or scoped).
+  get_github_issue_content                          Drill into a single GitHub issue: body + metadata + first page of
+  get_github_pull_request_content                   Drill into a single GitHub PR: body + merge state + diff stats + first
+  create_github_issue                               Create a new GitHub issue in the given repository.
+  update_github_issue                               Apply a single mutation to an existing issue, dispatched by ``action``.
+  create_github_pull_request                        Open a new pull request.
+  update_github_pull_request                        Apply a single mutation to an existing pull request, dispatched by ``action``.
+  review_github_pull_request                        Submit a review event or merge a pull request.
+  get_linkedin_user_info                            Fetch the LinkedIn OpenID Connect user profile of the currently authorized accou
+  share_text_on_linkedin                            Publish a plain-text post to the currently authorized LinkedIn account.
+  share_article_on_linkedin                         Share an external article/web link as a LinkedIn post.
+  share_image_on_linkedin                           Publish an image post to the currently authorized LinkedIn account.
+  web_search_exa                                    Semantic web search via Exa. Returns titles, URLs, published dates, and text sni
+  find_similar_pages_exa                            Find web pages similar to a given URL.
+  get_page_contents_exa                             Get extracted text (and optionally summary) for a list of URLs.
+  exa_answer                                        Get a direct answer to a question with source citations from Exa search.
+  list_square_locations                             List all locations for a Square merchant.
+  get_square_location                               Get details of a specific Square location.
+  list_square_catalog                               List catalog objects for a Square merchant.
+  get_square_catalog_object                         Retrieve a specific catalog object by ID.
+  search_square_catalog                             Search the Square catalog by text query.
+  upsert_square_catalog_object                      Create or update a catalog object.
+  search_square_orders                              Search orders for a Square merchant.
+  get_square_order                                  Retrieve a specific order by ID.
+  create_square_order                               Create a new order at a Square location.
+  list_square_customers                             List customers for a Square merchant.
+  get_square_customer                               Retrieve a specific customer by ID.
+  search_square_customers                           Search customers by various criteria.
+  create_square_customer                            Create a new customer profile.
+  list_square_payments                              List payment transactions for a Square merchant.
+  get_square_payment                                Retrieve a specific payment by ID.
+  get_square_inventory_count                        Get inventory count for a specific catalog object.
+  batch_retrieve_square_inventory                   Batch retrieve inventory counts for multiple catalog objects.
+  adjust_square_inventory                           Adjust inventory quantity for a catalog item variation.
+  set_square_inventory_physical_count               Set the physical inventory count for a catalog item variation.
+  transfer_square_inventory                         Transfer inventory between two locations.
+  js_product_database_query                         Search the Amazon product database via Jungle Scout.
+  js_historical_search_volume                       Get historical Amazon search volume trend for a keyword via Jungle Scout.
+  js_sales_estimates                                Get estimated sales data for an Amazon product (ASIN) via Jungle Scout.
+  js_share_of_voice                                 Get share of voice data for an Amazon search keyword via Jungle Scout.
+  js_keywords_by_asin                               Find keywords that one or more Amazon products (ASINs) rank for via Jungle Scout
+  js_keywords_by_keyword                            Find related Amazon keywords for given search terms via Jungle Scout.
+  oss_upload_file                                   Upload file content to an Alibaba Cloud OSS bucket and return the access URL.
+  global_hot_selling_products                       Search for hot-selling products on e-commerce platforms via Alibaba.
+  supplier_verification_recall                      Recall supplier candidates for verification report.
+  supplier_verification_detail                      Fetch supplier verification report detail by comp_id list.
+  querySkillMetadata                                Query supported Accio Skills metadata (official and personal).
+  querySkillMetadataById                            Query Accio Skills metadata by skill and registry identifiers.
+  listSkillsMcpTools                                List tool definitions exposed by the remote Accio Skills MCP server (MCP tools/l
+  set_odoo_credentials                              Set, update, or disconnect Odoo connection credentials for the current user.
+  check_odoo_credentials                            Check the status of the current user's Odoo credentials.
+  delete_odoo_credentials                           Delete the current user's Odoo credentials.
+  odoo_query_purchase_order                         Query a single purchase order from Odoo by its internal name.
+  odoo_list_purchase_orders                         List purchase orders from Odoo with optional filters.
+  odoo_query_vendor                                 Query vendor / supplier information from Odoo.
+  odoo_query_invoice                                Query a single vendor bill from Odoo by its internal name.
+  odoo_query_invoice_by_po                          Query all vendor bills linked to a single purchase order.
+  odoo_list_invoices                                List vendor bills with optional filters.
+  odoo_query_goods_receipt_by_po                    Query all goods receipt records (stock.picking) linked to a single PO.
+  odoo_query_goods_receipt                          Query a single goods receipt record from Odoo by its picking number.
+  odoo_list_goods_receipts                          List goods receipt records from Odoo with optional filters.
+  odoo_query_product                                Query product master data from Odoo.
+  odoo_query_stock_quantity                         Query current stock on hand from Odoo (``stock.quant``).
+  odoo_list_warehouses                              List all warehouses configured in Odoo (``stock.warehouse``).
+  odoo_list_locations                               List stock locations from Odoo (``stock.location``).
+  composio_create_session                           Create a Composio session and return an Accio-managed proxy endpoint for
+  composio_list_apps                                List the user's connected (authorized) apps on Composio platform.
+  composio_connect_app                              Initiate an OAuth connection via Composio platform.
+  composio_instagram_publish_guide                  Guide the agent to publish Instagram posts through Accio-managed Composio MCP to
+  composio_disconnect_app                           Disconnect (revoke) a connected app on Composio platform.
+  apify_search-actors                               Search the Apify Store to FIND and DISCOVER what scraping tools/Actors exist for
+  apify_fetch-actor-details                         Get detailed information about an Actor by its ID or full name (format: "usernam
+  apify_call-actor                                  Call any Actor from the Apify Store.
+  apify_get-actor-run                               Get detailed information about a specific Actor run.
+  apify_get-dataset-items                           Retrieve dataset items with pagination, sorting, and field selection.
+  apify_get-key-value-store-record                  Get a value stored in a key-value store under a specific key.
+  apify_abort-actor-run                             Abort an Actor run that is currently starting or running.
+  apify_search-apify-docs                           Search Apify and Crawlee documentation using full-text search.
+  apify_fetch-apify-docs                            Fetch the full content of an Apify or Crawlee documentation page by its URL.
+  apify_apify--rag-web-browser                      This tool calls the Actor "apify/rag-web-browser" and retrieves its output resul
+  ai_image_generate_facade                          AI图片生成统一门面，支持不同类型AI图片的生成
+  ai_minisite_acciowork_create_page                 Ai旺铺acciowork创建页面主版本，如果超出最大版本数量，提示超出
+  ai_minisite_acciowork_publish_page                Ai旺铺acciowork创建历史版本，并发布页面
+  ai_minisite_get_acciowork_page_list               AI旺铺获取acciowork的页面版本，返回页面主版本和每个主版本下的历史子版本
+  ai_minisite_get_company_info                      Ai旺铺-收集公司信息，根据商家的aliId、数据类型、语种，获取对应的信息，返回为json结构
+  ai_minisite_get_template_info                     Ai旺铺根据模版版本获取模版列表，或者可以根据模版id获取具体模版信息
+  alibaba_icbu_im_tradeagent_whitelist              accio 采购插件trade-agent白名单
+  apply_governance                                  编辑商品
+  aw_create_complete_website                        AI旺铺 accio work 创建完整网页
+  aw_create_complete_website_cloud                  AI旺铺 accio work 创建完整网页云端
+  aw_create_website_preview                         AI旺铺 accio work 创建网页预览
+  aw_create_website_preview_cloud                   AI旺铺 accio work 创建网页预览云端
+  aw_edit_website                                   AI旺铺-AW-网站编辑
+  aw_edit_website_cloud                             AI旺铺-AW-网站编辑-云端
+  aw_get_auth_token                                 获取鉴权token
+  aw_get_task_status                                获取当前任务状态
+  aw_publish_website_cloud                          AI旺铺 accio work 发布网页预览云端版本
+  aw_version_fetch_cloud                            AI旺铺-AW-复原网站版本-云端
+  batchReserveKeywords                              用于批量预定品牌广告关键词
+  batch_edit_optimize                               批量编辑优化
+  batch_edit_product                                批量修改商品
+  chargebackMaterialWithAIForAliid                  根据aliId和订单ID拒付抗辩AI生成材料
+  cogito_deep_research_status                       cogito深度研究结果
+  cogito_deep_research_submit                       cogito深度研究提交
+  consume_ipoint                                    根据本次请求消耗的token，执行i豆权益的扣费
+  create_ggs_batch_optimize_main_task               创建GGS批量优化主任务，创建完成后需要调用submit_ggs_batch_optimize_detail工具分批次提交批量优化的商品
+  data_advisor_account_summary                      查询店铺的员工数据
+  data_advisor_category_infer                       根据类目描述预测类目id
+  data_advisor_category_prediction                  根据类目描述预测类目id
+  data_advisor_product_selection                    查询行业热门商品
+  data_advisor_shop_channel                         查询店铺的流量来源数据
+  data_advisor_shop_flow                            查询店铺的流量详情数据
+  data_advisor_shop_flow_profile                    查询店铺的流量画像数据
+  data_advisor_shop_product                         查询店铺商品的效果数据
+  data_advisor_shop_region                          查询店铺流量的地域分布数据
+  data_advisor_shop_summary                         查询店铺的经营数据
+  data_advisor_to_product                           查询店铺的去向产品数据
+  data_advisor_visitor_detail                       查询店铺的访客列表
+  distribution_supply_channel_create_order          用于创建不同的供货渠道的订单
+  distribution_supply_channel_query_logistics       分销业务中通过平台订单来查询供货渠道订单的物流信息
+  draft_judge_and_search                            判断并查询草稿品数据
+  edit_draft                                        我是一个废弃的工具，禁止使用该工具。
+  euro_get_sku_detail                               根据product_id查找sku详情信息
+  euro_list_products                                根据商品ID、商品名称等查询商品信息
+  fetch_product_info                                根据product_id获取商品详细信息
+  fetch_supplier_info                               根据supplier_id获取商家详细信息
+  findCustomerShopInfo                              查询客户店铺基础信息和高关联信息（包括店铺名称、主营行业、橱窗商品信息、近期店铺高询盘词、高p4p消耗词和高引流词）
+  generate_style_list                               根据图片获取场景图风格列表
+  getAllBehaviorsSemanticForKeywordRec              查询阿里巴巴国际站客户在站内的行为序列数据
+  get_attr_info                                     根据类目id，查询该类目下的属性信息
+  get_buyer_basic_info                              查询买家基本信息，包括买家层级、国家代码、买家画像、历史浏览数据等
+  get_inquiry_blockers                              获取拦截项
+  get_oss_pre_upload_url                            获取 OSS 直传预签名 URL。用于上传oss文件时候获取，依赖用户登录态
+  get_product_detail                                查询商品详情信息，获取商品商详知识
+  get_product_score_detail                          查询商品质量分
+  get_requirements                                  获取最近14天的询盘任务
+  get_seller_basic_info                             查询商家基本信息，包括商家基本知识、主营类目、最近发送的消息等
+  get_sku_detail                                    根据product_id查找sku详情信息
+  get_task_progress_summary                         查询询盘详细信息
+  ggs_XDataLogger_log                               ggs接口打点记录
+  ggs_ai_assistant_ability_check_point              校验GGS用户生意助手权益点数是否充足
+  ggs_cancel_migration_task                         根据搬品任务id(taskId)取消搬品任务
+  ggs_category_query                                GGS根据关键词查询类目
+  ggs_high_demand_product_topic                     根据图片或关键词等信息查询定招主题
+  ggs_image_post_task_result                        获取图片发品优化任务结果
+  ggs_image_post_task_start                         生成通过图片和类目预测商品信息的任务
+  ggs_image_predict_category                        GGS图片预测类目
+  ggs_image_quality_check                           GGS图片质量分检测
+  ggs_migration_pre_check                           GGS搬品预检查，检查photobank容量，草稿箱容量
+  ggs_product_ai_image_color_change                 对图片使用主体换色，通过输入原始图片URL、prompt, 色卡，发起一次AI图片创作请求
+  ggs_product_ai_image_generate                     发起AI图片创作，通过输入原始图片URL,prompt,不同AI能力对应的AbilityCode,发起一次AI图片创作请求
+  ggs_product_ai_image_generate_result              根据图片创作请求唯一key(requestKey),查询AI图片创作的结果
+  icbu_ads_account_diagnosis                        对广告账户做整体诊断，返回账户概览、账户级诊断结论和问题计划列表。
+  icbu_ads_campaign_diagnosis                       ICBU广告计划诊断
+  icbu_ads_entity                                   广告账户实体查询
+  icbu_ads_entity_campaign_product_create           给指定计划添加商品进行投放
+  icbu_ads_entity_campaign_product_delete           删除指定计划下的品
+  icbu_ads_recommend_product                        按计划类型推荐商品
+  icbu_ads_report_execute_sql                       ICBU广告执行SQL查询
+  icbu_ads_report_load_datasource                   ICBU广告加载报告数据源
+  icbu_alibaba_buyer_consignee_address_list         查询阿里国际站买家收件地址列表
+  icbu_alibaba_trade_agent_guide                    阿里国际站订单引导MCP工具
+  icbu_alibaba_trade_create_service                 阿里巴巴订单创建服务,信保下单，创建
+  icbu_alibaba_trade_order_detail_query             阿里巴巴订单详情查询服务
+  icbu_alibaba_trade_order_draft_view               阿里巴巴订单草稿预览服务
+  icbu_distribution_amazon_upc_asin_relation        存储upc和asin关系
+  icbu_distribution_auth                            分销商品来源渠道授权
+  icbu_distribution_batch_import_order              根据用户批量上传的Excel文件在国际站进行批量创单
+  icbu_distribution_buyer_auth_pay_info             根据买家id，获取对应账号的授权代扣信息
+  icbu_distribution_channel_product_mapping         用于管理分销渠道商品sku与分销渠道商品id的映射关系。 存储渠道商品SKU/商品ID与Amazon(ASIN)等渠道商品标识的对应关系。
+  icbu_distribution_member_id                       分销获取用户上下文的id
+  icbu_distribution_product_freight_cost_tool       分销商品物流价查询
+  icbu_distribution_query_by_image                  根据图片查询分销品
+  icbu_distribution_query_by_keyword                根据关键词查询不同渠道的分销品
+  icbu_distribution_query_detail_by_ids             根据分销平台来源和商品id查询分销商品详情
+  icbu_distribution_query_orders                    根据用户id、订单状态查询分销订单列表
+  icbu_distribution_seller_order_shipping           商家根据订单id和物流单号对分销订单执行发货操作
+  icbu_ds_mcp_tool_orderCreateForAmazon             ICBU分销MCP工具_Amazon渠道订单关联创建
+  icbu_ds_mcp_tool_orderGet                         ICBU分销MCP工具_获取订单详情
+  icbu_ds_mcp_tool_queryOrderLogistics              获取国际站订单对应的物流轨迹信息
+  icbu_faq_knowledge_chunk                          从国际站知识库检索业务切片。适用场景包括：国际站后台配置、全球市场准入、跨境物流与结算等问题。通过此工具获取专业、结构化的知识内容，以支持回复的准确性和权威性。
+  icbu_logistics_customs_calculate_tariff_tool      此为全球关税计算工具，可根据用户提供的商品信息归类出目的国海关编码以及计算出准确关税
+  icbu_logistics_expression_product_detail_freight  ICBU国际站商品物流运费查询，基于商品id查询此商品运送到某一个国家的运费
+  icbu_product_generate_by_material                 该工具仅可以在icbu-product-publish skill内部使用，其他场景不可以使用。
+  icbu_seller_query_lg_solution                     商家输入包裹重量和目的国后可查询国际站物流线路（精选返回推荐最多3条线路）
+  infer_category                                    基于商品的内容（如标题、属性、sku等信息）预测当前商品归属的类目。
+  infer_prop                                        基于站外商品内容或者解析商品素材内容，将站外非标准的属性和sku信息映射到ICBU站内标准的属性和sku信息上
+  list_inquiry_tasks                                获取询盘任务
+  list_products                                     根据商品ID、商品名称等查询商品信息
+  list_products_by_id                               查询商品信息（根据商品ID）
+  list_products_by_name                             查询商品信息（根据商品名称）
+  list_products_by_score                            查询商品信息（根据质量分）
+  list_risk_brand_name                              查询风控品牌词
+  material_analysis                                 根据用户提供的素材解析商品所需内容
+  merge_material                                    将用户修改的商品内容与原始商品内容进行合并。
+  page_query_migration_task_info_product_info       获取GGS搬品任务数据详情
+  precheck_url_product_generate                     URL发品-预检
+  product_ai_image_color_change                     对图片使用主体换色，通过输入原始图片URL、prompt, 色卡，发起一次AI图片创作请求
+  product_ai_image_custom_logo                      AI创作Logo图，通过输入原始图片URL、logo图片URL、prompt,，发起一次Logo图片创作请求
+  product_ai_image_generate                         发起AI图片创作，通过输入原始图片URL,prompt,不同AI能力对应的AbilityCode,发起一次AI图片创作请求
+  product_ai_image_generate_result                  根据图片创作请求唯一key(requestKey),查询AI图片创作的结果
+  product_ai_image_model_generate                   AI创作模特图，通过输入主体图片URL、模特图片URL、prompt,，发起一次模特图片创作请求
+  product_ai_image_translate                        AI图片翻译，通过输入主体图片URL、目标语言，发起一次图片翻译创作请求
+  product_ai_video_generate_result                  创意工坊视频结果查询
+  product_generate_precheck                         素材包发品-商品发布预检(校验 i 豆是否充足、图片银行空间是否充足)
+  product_generate_query_task_list                  发品任务查询-查询发品任务列表
+  product_governance_ai_select                      从店铺候选商品中按自然语言筛选（用户需要筛选特定条件的商品（如"低转化的 3C 商品"、"质量分低于 5 分的商品"） - 用户通过商品 ID 圈品（如"帮我优
+  product_scene_video_generate                      根据提供的商品图片生成一个商品的动态场景展示视频。输入为一张商品图片和商品视频描述prompt，输出动态展示商品的视频路径。当用户需要生成商品视频时使用。
+  product_scene_video_generate_v2                   根据提供的商品图片生成一个商品的动态场景展示视频。输入为一张商品图片和商品视频描述prompt，输出动态展示商品的视频路径。当用户需要生成商品视频时使用。
+  publish_draft                                     支持草稿发布到线上，变成正式商品
+  publish_ggs_migration_product                     发布或编辑GGS商品，根据请求参数携带的productId字段是否为空自动判断是发布还是编辑商品，分批限制：每批最多包含 5 个商品
+  publish_product                                   根据提供的商品素材内容发布商品
+  queryCustomerGoodsCateSummary                     查询客户店铺商品所属行业
+  queryGoodsInfoByGoodsIdList                       基于商品id查询客户店铺商品详情
+  queryTradeListMcp                                 根据用户请求查询交易合同列表
+  query_ai_select_result                            查询圈品结果
+  query_contact                                     获取用户的联系人列表信息
+  query_conversation_msg                            查询指定会话的消息列表，支持通过 limitTimeStamp 游标实现翻页，false表示从limitTimeStamp减小的方向查询，true表示从limi
+  query_ggs_agent_detail                            查询GGS数字人配置状态；agentType风控：risk_ai；商品：product_ai；沟通：message_ai / marketing_ai
+  query_ggs_all_effective_eu_agent                  查询GGS商家全量生效的欧盟负责人列表
+  query_ggs_auto_follow_marketing_config            查询GGS自动跟进营销配置
+  query_ggs_auto_quote_setting                      查询 GGS RFQ 自动报价设置
+  query_ggs_batch_optimize_result                   用于轮询批量优化任务的结果
+  query_ggs_contact_setting_info                    GGS查询自动接待配置项，包括主子账号配置与生效时间
+  query_ggs_eu_agent_plan_info                      查询GGS欧盟代理人计划信息
+  query_ggs_merchant_info                           查询GGS商家基础信息，例如商家类型、主营类目、公司名称、星等级等
+  query_ggs_merchant_shipping_template              查询GGS商家物流模版信息
+  query_ggs_metrics_detail                          查询GGS数字人优化指标详情
+  query_ggs_migration_task_status                   查询GGS商品搬品任务状态
+  query_ggs_open_time_config                        查询GGS自动接待开启时间配置
+  query_ggs_risk_detected_stat                      查询GGS风险诊断检测数据
+  query_ggs_risk_effect_stat                        GGS查询风控风险效果统计
+  query_im_card_info                                该工具用于查询沟通卡片描述信息，传入参数需要将 useAgentDescription设置为true
+  query_material_analysis_result                    查询客户素材解析的结果
+  query_product_score                               ggs查询商品质量分，仅查询使用，如果优化需要先找skill。返回结果包含当前的分数以及分数扣分的明细，详细定义请参考ggs-product-optimize 
+  query_recent_conversation                         查询卖家最近的会话列表（分页拉取）。返回每个会话的基础信息（会话ID、类型、对方名称、未读数、更新时间）和最近一条消息的摘要。支持通过 limitTimeSta
+  query_remaining_ipoint                            查询当前用户的剩余i豆权益数量
+  query_seller_acct_dim_diag_data                   查询账号维度的诊断数据，包括沟通买家数、沟通深度、回复率、服务评价等指标。
+  query_seller_chat_quality_check_detail            查询商家聊天质检明细数据，获取一周内的沟通质检详情，包括买家已读未回、超时回复、重复回复等质检项。
+  query_seller_knowledge                            查询商家知识库信息，根据买家query检索匹配的知识库内容
+  query_seller_shop_dim_diag_data                   查询店铺维度的诊断数据，提供同行对比数据（行业平均、行业优秀），帮助商家了解在行业中的位置。
+  query_source_product_by_ecology_sku_id            根据渠道商品查询分销平台源商品
+  query_store_diagnosis_daily_odps                  GGS商家诊断数据-日表查询
+  query_supported_languages                         获取图片翻译功能支持的目标语言列表
+  query_system_template                             AI生图系统模版，支持不同AI能力（对应AbilityCode）获取对应的系统模版
+  query_user_category                               查询客户可以发布商品的类目信息
+  reply_buyer_over_30_days                          仅当买家流失时间大于30天时可调用（最后一条消息距现在超过30天），生成跟进回复建议
+  save_or_update_ggs_auto_quote_setting             保存或更新GGS RFQ 自动报价设置
+  save_product_sku_mapping                          渠道商品和分销平台源商品关联关系创建
+  searchKeywordList                                 用于查询阿里巴巴国际站售卖的品牌广告关键词，支持多种查询参数。
+  searchNextMonthAuctionResource                    用于查询客户同行次月释放的可打标资源
+  seller_logistics_oder_list                        阿里国际站商家物流订单查询工具
+  sendInstructToSellerAgent                         发送消息给卖家Agent
+  send_msg                                          沟通场景根据双方id发送消息，需要指定domain
+  service_report_weekly_all_data_query              查询商家服务周报详细完整数据
+  set_auto_chat                                     修改代聊状态
+  set_ggs_auto_follow_marketing_config              设置GGS自动跟进营销配置
+  set_ggs_open_time_config                          设置GGS自动接待开启时间配置（运营时间）
+  shop_risk_diagnosis                               扫描店铺风险、检测商品风险
+  start_ggs_product_migration                       创建GGS搬品任务进行数据拉取和商品信息解析
+  start_url_product_generate                        URL发品-启动URL发品
+  store_diagnose_brief                              结合店铺经营情况，为店铺做简单的经营数据分析及店铺诊断
+  subaccount_query                                  根据主账号查询所有子账号信息
+  submit_ggs_batch_optimize_detail                  分批次提交批量优化的商品，需要携带主任务id
+  update_ggs_agent_detail_list                      更新GGS数字人配置，包括商品自动优化、沟通自动接待、自动RFQ报价以及风控AI检测
+  update_inquiry_task_requirements                  更新询盘需求
+  video_image_style_generate                        根据图片，生成视频风格
+  web_search                                        使用web_search工具，获取query对应的网络信息
+  work_create_Inquiry                               创建询盘
+  set_mailchimp_credentials                         Set, update, or disconnect Mailchimp API credentials for the current user.
+  check_mailchimp_credentials                       Check the status of the current user's Mailchimp API credentials.
+  delete_mailchimp_credentials                      Delete the current user's Mailchimp API credentials.
+  get_mailchimp_account_info                        Get Mailchimp account information including plan details, contact limits,
+  list_mailchimp_audiences                          List all audiences (mailing lists) in your Mailchimp account.
+  get_mailchimp_audience                            Get detailed information about a specific audience including member statistics.
+  list_mailchimp_members                            List members (subscribers) in a specific audience list.
+  get_mailchimp_member                              Get detailed information about a specific list member by email address.
+  add_or_update_mailchimp_member                    Add a new member or update an existing member in an audience list.
+  delete_mailchimp_member                           Remove (archive) a member from an audience list.
+  manage_mailchimp_member_tags                      Add or remove tags for a specific list member.
+  list_mailchimp_campaigns                          List email campaigns in your Mailchimp account.
+  create_mailchimp_campaign                         Create a new email marketing campaign.
+  update_mailchimp_campaign_content                 Set or update the **email body** (HTML / plain-text) of an existing
+  update_mailchimp_campaign                         Update **campaign metadata** (settings + recipient audience) of an
+  send_mailchimp_campaign                           Send an email campaign immediately to all recipients.
+  schedule_mailchimp_campaign                       Schedule a campaign to be sent at a specific UTC time.
+  unschedule_mailchimp_campaign                     Cancel the scheduled send of a campaign.
+  get_mailchimp_campaign                            Fetch full details of a single campaign (read-only).
+  delete_mailchimp_campaign                         Permanently delete a campaign.
+  send_mailchimp_test_email                         Send a test email for a campaign to specified email addresses.
+  get_mailchimp_campaign_report                     Get performance report for a sent campaign including open rate, click rate,
+  get_mailchimp_campaign_open_details               Get detailed list of subscribers who opened a specific campaign, including
+  get_mailchimp_campaign_click_details              Get detailed list of links clicked in a campaign and which subscribers
+  get_mailchimp_campaign_unsubscribed               Get list of subscribers who unsubscribed from a specific campaign.
+  list_mailchimp_templates                          List email templates in your Mailchimp account. Filter by type: user
+  get_mailchimp_template                            Get detailed information about a specific email template.
+  create_mailchimp_template                         Create a new email template with custom HTML content. Supports Mailchimp
+  update_mailchimp_template                         Update an existing email template's name or HTML content.
+  delete_mailchimp_template                         Delete a custom email template.
+  list_mailchimp_segments                           List all segments in a specific audience list.
+  create_mailchimp_segment                          Create a new segment in an audience list. Use static_segment (JSON array of
+  update_mailchimp_segment                          Update an existing segment's name or members.
+  delete_mailchimp_segment                          Delete a segment from an audience list.
+  list_mailchimp_merge_fields                       List all merge fields (custom fields) defined for an audience list.
+  add_mailchimp_merge_field                         Add a new merge field (custom contact property) to an audience list.
+  delete_mailchimp_merge_field                      Delete a merge field (custom contact property) from an audience list.
+  batch_add_mailchimp_members                       Add multiple members to an audience list in a single operation. members is
+
+  726 tools available
+
